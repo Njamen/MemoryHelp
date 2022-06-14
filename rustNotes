@@ -1,0 +1,323 @@
+===> cargo remove warning 
+https://stackoverflow.com/questions/53355265/how-can-i-only-show-warnings-if-there-are-no-errors
+	$ cargo rustc -- -Awarnings
+
+
+===>   jwt in rust  with  jsonwebtoken
+https://blog.logrocket.com/jwt-authentication-in-rust/
+https://skinkade.github.io/rocket-jwt-roles-demo/
+https://github.com/SakaDream/rocket-rest-api-with-jwt
+
+
+
+
+===> do<cumenting api endpoint
+https://idratherbewriting.com/learnapidoc/docendpoints.html
+
+api doc tool
+https://mytech.reviews/best-free-api-documentation-tools/
+
+
+==> format struct   
+
+       println!("{:?}",sc_c); 
+       println!("{:#?}",school_c); 
+
+
+==>  url encoded rust
+https://stackoverflow.com/questions/58026024/rust-how-to-urlencode-a-string-with-byte-parameters
+        let query: String = form_urlencoded::Serializer::new(String::new())
+        .append_pair("school_c", school_json.as_str())
+        .finish();
+
+
+==> json converter 
+https://github.com/serde-rs/json
+        let sc_c: School_c = serde_json::from_str(s.as_str()).unwrap();
+                let school_json = serde_json::to_string(&school_c).unwrap();
+
+
+
+
+==>    multifichier rust suite 
+https://stackoverflow.com/questions/26946646/rust-package-with-both-a-library-and-a-binary
+
+https://doc.rust-lang.org/book/ch11-03-test-organization.html#submodules-in-integration-tests
+If our project is a binary crate that only contains a src/main.rs file and doesn’t have a src/lib.rs file, we can’t create integration tests in the tests directory and bring functions defined in the src/main.rs file into scope with a use statement. Only library crates expose functions that other crates can use; binary crates are meant to be run on their own.
+
+==>  rocket rust testing  
+Sergio benitez testing  
+https://github.com/SergioBenitez/Rocket/blob/master/examples/json/src/tests.rs
+
+https://blog.logrocket.com/end-to-end-testing-for-rust-web-services/
+https://blog.logrocket.com/end-to-end-testing-for-rust-web-services/
+
+https://doc.rust-lang.org/book/ch11-00-testing.html
+https://doc.rust-lang.org/cargo/guide/tests.html
+
+==>  rocket 0.5   and rust 1.45 
+https://turreta.com/2020/08/29/rust-stable-and-rocket-0-5-latest-development-codes/
+https://turreta.com/2020/05/21/rust-framework-rocket-goes-stable/
+https://www.reddit.com/r/rust/comments/73joi2/code_generating_a_safer_web_with_rocket_by_sergio/
+
+==>  hashmap
+https://docs.rs/twox-hash/1.6.0/twox_hash/
+
+==> rocket tuto
+https://blog.logrocket.com/rust-web-apps-using-rocket-framework/
+
+
+
+==> Rust lifetimes  
+https://rust.developpez.com/tutoriels/rust-par-l-exemple/?page=les-contextes#L13-4 
+https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html
+https://rollout.io/blog/lifetimes-in-rust/   
+
+fn choose_first<'a, 'b>(first: &'a i32, _: &'b i32) -> &'b i32 {
+    first
+}
+
+
+==> this can be replace by the followed 
+            match env::var("ADDRESS") {   
+                    Ok(address) => {                        
+                       address                        
+                    }
+
+                    Err(_) => { 
+                        String::from("127.0.0.1")
+                    }
+            }  
+
+replace by :   env::var("ADDRESS").ok().unwrap_or_else(||String::from("127.0.0.1")   )
+
+
+
+==> oncatenate string 
+https://stackoverflow.com/questions/30154541/how-do-i-concatenate-strings
+
+==> prepare exec prototype
+pub fn prep_exec<A, T>(&mut self, query: A, params: T) -> MyResult<QueryResult>
+where
+    A: AsRef<str>,
+    T: Into<Params>,
+
+==> mysql simple 
+https://awesomeopensource.com/project/blackbeam/rust-mysql-simple
+https://awesomeopensource.com/project/blackbeam/rust-mysql-simple
+http://outersky.github.io/r2d2-mysql/doc/v0.2.0/mysql/index.html
+https://docs.rs/mysql/20.0.1/mysql/
+
+
+==>  rocket log 
+https://crates.io/crates/log
+
+[dependencies]
+log = "0.4"
+
+use log::{info, trace, warn};
+
+    trace!("Commencing yak shaving");
+
+
+===> commandes pour envoyer sur heroku :  
+       $  git push heroku master
+
+
+to do :   rust lifetime to study; FromRequest to study Fromform 
+
+==> convert mysql date time into string with sql 
+http://www.sqlines.com/sql-server-to-mysql/functions/convert_string
+
+===>  mysql date to string use of chrono
+https://lib.rs/crates/mysql_common
+https://docs.rs/chrono/0.4.11/chrono/
+
+
+==>  constructor for rust
+https://github.com/nrc/derive-new
+https://dzone.com/articles/another-way-of-creating-struct-instances-in-rust
+
+===>   on convertit une &'static str en String
+    "Moi".to_owned(), 
+    let _b = "b".to_string();
+
+===> descruturation of a struct 
+let query_result =   match listOfSubjectMarksParameters {
+ListOfSubjectMarksParameters { idClassroomCategory, idClassAYear, idStudentClassAYear,idMarkCategory, 
+    schoolSchoolYear} 
+     => {                               
+     }
+};
+
+
+heroku create todo-backend-rocket-rust \  --buildpack https://github.com/emk/heroku-buildpack-rust.git
+
+
+==> deploy rocket app to heroku
+http://www.duelinmarkers.com/2017/10/21/how-to-deploy-a-rocket-application-to-heroku.html
+https://dev.to/gruberb/web-programming-in-rust-02x-deploy-your-first-app-1k05
+
+==> the ? operator 
+https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/the-question-mark-operator-for-easier-error-handling.html
+
+==> rocket configuration enviroment variables 
+https://rocket.rs/v0.4/guide/configuration/#environment-variables
+https://rocket.rs/v0.4/guide/configuration/
+https://api.rocket.rs/v0.4/rocket/config/index.html
+
+ROCKET_ENV=production PORT=1234 DATABASE_URL=mysql://152871_yanord:yanord@mysql-databaseweb.alwaysdata.net:3306/databaseweb_test2  cargo run
+
+==> database config 
+https://rocket.rs/v0.4/guide/configuration/#environment-variables
+https://api.rocket.rs/v0.4/rocket_contrib/databases/index.html
+https://api.rocket.rs/v0.4/rocket_contrib/databases/index.html
+https://github.com/SergioBenitez/Rocket/blob/master/examples/todo/src/main.rs
+
+
+==>  rocket response 
+https://stackoverflow.com/questions/54865824/return-json-with-an-http-status-other-than-200-in-rocket
+
+
+==> Rocket respomses with cors 
+https://docs.rs/rocket_cors/0.5.1/rocket_cors/
+https://docs.rs/rocket_cors/0.2.3/rocket_cors/struct.Cors.html
+
+
+=>collections
+Vec 
+Vec<T>
+let mut vec = Vec::new();
+vec.push(1);
+The vec! macro is provided to make initialization more convenient: let mut vec = vec![1, 2, 3];
+let mut vec1 = Vec::with_capacity(5);
+
+ HashMap.
+
+==> genericite 
+https://riptutorial.com/fr/rust/example/16084/structures-generiques
+
+=> get data from a database mysql 
+https://turreta.com/2019/09/14/rust-connect-to-mysql/
+for row in conn.prep_exec("SELECT ?, ?", (42, 2.5)).unwrap() {
+    let (a, b) = from_row(row.unwrap());
+    assert_eq!((a, b), (42u8, 2.5_f32));
+}
+
+
+==> rocket routes parametre 
+https://rocket.rs/v0.4/guide/requests/
+In general, when any guard fails for any reason, including parameter guards, 
+	you can use an Option or Result type in its place to catch the failure.
+
+#[get("/user/<id>")]
+fn user(id: usize) -> T { ... }
+
+Forwards can be caught by using a Result or Option type. For example, if the type of id in the user function was Result<usize, &RawStr>, then user would never forward. An Ok variant would indicate that <id> was a valid usize, while an Err would indicate that <id> was not a usize. The Err's value would contain the string that failed to parse as a usize.
+
+
+==>  Rust multifichier 
+
+https://doc.rust-lang.org/edition-guide/rust-2018/module-system/path-clarity.html
+https://blog.infinitenegativeutility.com/2017/8/the-basic-principles-of-rust-modules
+
+Imaginons maintenant que vous vouliez mettre des fichiers dans des sous-dossiers : dans ce cas là, il vous
+faudra créer un fichier mod.rs dans le sous-dossier dans lequel vous devrez utiliser "pub use" sur les éléments que vous
+voudrez réexporter dans le scope supérieur (et n'oubliez pas d'importer les fichiers avec mod !).
+
+
+=> borrowing 
+we have the following type for each type
+    String; &String; &mut String;
+we can affect this values 
+      let mut s = String::from("Hello, Ru");
+      let a =  &mut s ;
+      let b =  &s ;
+      let c =  s ;
+
+
+
+==> String 
+https://doc.rust-lang.org/1.7.0/book/strings.html
+let mut line = String::new(); 
+let mut s = String::from("Hello, Rust!");
+let mut s = "Hello".to_string(); // mut s: String	
+	let s = "foo
+	    bar";
+	assert_eq!("foo\n        bar", s);
+
+	let s = "foo\
+	    bar"; 
+
+	assert_eq!("foobar", s);
+
+
+==> Str 
+https://www.ameyalokare.com/rust/2017/10/12/rust-str-vs-String.html
+
+We can only ever interact with str as a borrowed type aka &str. This is called a string slice, an immutable view of a string.
+The type str does not exist. it is rather the type &str   as   
+     let chaine : &str = "Good morning";
+
+&str  are called ‘string slices’. A string slice has a fixed size, and cannot be mutated.
+"Hello there." is a string literal and its type is &'static str
+
+"Hello there." is a string literal and its type is &'static str
+
+
+==> reading of data
+ 
+    let  data :i32  = 
+        match io::stdin().read_line(&mut line) {
+            Ok(_n) => { 
+               match line.trim().parse::<i32>() {
+                 Ok(n) => n,
+                 Err(e) => { 
+                    println!("error {}", e);
+                    0i32
+                 }
+               }                         
+            }
+            Err(e) => {
+              println!("error {}", e);
+              0i32
+            }
+        };
+
+==> partten matching 
+x @ 10..=100 => println!("{} est entre 9 et 101", x),
+10..=100 => println!("La variable est entre 10 et 100 (inclus)"),
+"jambon" | "poisson" | "œuf" => println!("Des protéines !"),
+
+
+==> Option contien Some et None 
+==> Result contient Ok ou Err
+
+==> Rust commands 
+	$ rustc main.rs     // compile a rust program
+	$ cargo --version     // version of cargo
+        $ cargo new hello_cargo   // create a new project using cargo
+	$ cargo build  // bluid a cargo project
+	$ cargo run  // bluid and run  a cargo project
+	$ cargo check  // check if the progam compile without producing an exe 
+	$ cargo build --release  // bluid the projet for release exe in debug/release folder 
+
+
+
+=======================================================================================
+ROCKET_PORT=$PORT RUST_LOG=error ROCKET_ENV=production ./target/release/webApp   
+
+heroku create todo-backend-rocket-rust  --buildpack https://github.com/emk/heroku-buildpack-rust.git
+
+
+
+DATABASE_URL="" ROCKET_PORT=8000 ROCKET_ENV=production cargo run
+
+DATABASE_URL=mysql://152871_yanord:yanord@mysql-databaseweb.alwaysdata.net:3306/databaseweb_test2 ROCKET_PORT=8010 ROCKET_ENV=production cargo run
+
+DATABASE_URL=mysql://152871_yanord:yanord@mysql-databaseweb.alwaysdata.net:3306/databaseweb_test2 ROCKET_PORT=8000 ROCKET_ENV=developpement cargo run
+
+
+
+
+

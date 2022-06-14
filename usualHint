@@ -1,0 +1,1039 @@
+ https://www.youtube.com/watch?v=hEd8Xrcoo9o
+ https://www.youtube.com/watch?v=CUKEocpGuN4
+
+// git force
+https://blog.stack-labs.com/code/git_force_with_lease/
+https://www.atlassian.com/fr/git/tutorials/rewriting-history/git-rebase
+
+
+==> virtual box 
+https://www.tecmint.com/enable-usb-in-virtualbox/
+
+https://stackoverflow.com/questions/37467492/how-to-provide-user-login-with-a-username-and-not-an-email
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=19&cad=rja&uact=8&ved=2ahUKEwjUzuS9hdfkAhVuQxUIHcYvBaEQFjASegQICBAB&url=https%3A%2F%2Flesveilleursdenuit.fr%2Fintroduction-a-firebase%2F&usg=AOvVaw3MGagcSwJEPjfuRVq8Am_6
+
+
+
+https://medium.com/@Idan_Co/angular-print-service-290651c721f9
+
+<a [routerLink]="[{ outlets: { part3Outlet: ['listofReportCard2'] } }]">
+    Products List
+</a>
+
+<a [routerLink]="['/studentRc', { outlets: { part3Outlet: ['listofReportCard2'] } } ]">
+          imprimer tous les bulletins
+        </a>
+router.navigate([{outlets: {primary: 'path' ,sidebar: 'path'}}]);
+
+
+val words = "one two three four five six seven eight nine ten".split(' ')
+val chunks = words.chunked(3)
+
+println(chunks) // [[one, two, three], [four, five, six], [seven, eight, nine], [ten]]
+
+
+sudo chown -R $USER:$USER /opt/android-studio
+sudo chown yanord  /dev/kvm
+
+
+
+
+nshool_academy_android_app
+
+
+********* apache - mysql - php  informations  *************
+        $ ls /var/www/html    //  repertoire des sites :  
+	$ sudo apt-get install apache2 php libapache2-mod-php mysql-server php-mysql   // commande d 'installation
+     
+
+
+
+************ show the computer caracteristiques ***********
+sudo dmidecode -t
+
+********** npm and node update ********************
+	$  sudo npm install npm@latest -g
+	$  sudo npm install -g n
+	$  sudo n lts
+	$  sudo n latest
+
+***** kotlin commands  ******
+
+	$  kotlinc ./src/main.kt -include-runtime -d ./bin/main.jar     
+	$  java -jar ./bin/main.jar
+
+****** Angular commands **************
+        $  ng new nSchoolAcademySystem --style=scss --skip-tests=true
+	$  ng serve --open
+	$  npm install bootstrap@4.3.1 --save
+            Ouvrez le fichier  angular.json  du dossier source de votre projet.  Dans "architect/build/options", modifiez l'array  styles  comme suit :
+		"styles": [
+		    "../node_modules/bootstrap/dist/css/bootstrap.css",
+		    "styles.scss"
+		]
+	$  ng generate component mon-premier  ||   ng g c mon-premier	
+	$  e
+	$  ng update @angular/cli @angular/core
+	$  ng generate class customer
+
+
+install bootstrap 
+install flexLayout for angular 
+
+Merge branch 'cesmandjaora'
+
+************* heroku apps config **************
+cesngassa-nshoolsystem    // app name
+DATABASE_HOST : mysql-cesloulou.alwaysdata.net	
+DATABASE_NAME : cesloulou_db
+DATABASE_USER : cesloulou_userdb
+DATABASE_USER_PASSWORD : comptenlg.ge.cesloulou-1
+ID_MATRICULE :
+APP_MIN_VERSION : 
+ID_APPLICATION : 
+
+************* apps url **************
+    //readonly baseAppUrl: string = 'https://testces-nschoolsystem.herokuapp.com/api/'
+    //readonly baseAppUrl: string = 'https://testecole-nschoolsystem.herokuapp.com/api/'
+
+    //readonly baseAppUrl: string = 'https://cesmandjaora-nschoolsystem.herokuapp.com/api/';
+    //readonly baseAppUrl: string = 'https://cesloulou-nschoolsystem.herokuapp.com/api/';
+    //readonly baseAppUrl: string = 'https://cesngassa-nshoolsystem.herokuapp.com/api/';
+    <string name="server_url">"https://cesngassa-nshoolsystem.herokuapp.com/api/"</string>
+
+
+    //readonly baseAppUrl: string = 'https://ecoleconviction-nschoolsystem.herokuapp.com/api/'
+
+
+***** cargo and rust commands **********
+	$ cargo test -- --test-threads=1   // run test in one thread that is Consecutively
+	$ cargo test   // run test in parrallel 
+	$ cargo test -- --show-output   //  see printed values for passing tests as well,
+        $ cargo test name_of-the-test_function   //  run a single test
+        $ cargo test add     // run all test whose name function contains add
+        $ cargo test -- --ignored   // run all test even the ignored one 
+        	
+
+
+***** firebase **********
+        $  sudo firebase init functions
+        $  sudo firebase login 
+
+***** Git Commands *********
+	$  git log --graph
+	$  git clone lienDuRepository
+	$  git init 
+	$  git status
+	$  git config --global user.name "name or pseudo"
+	$  git config --global user.mail "email"
+	$  git config --list     // show the user email of the git 	
+	$  git add fileName
+	$  git add .              // this add all the file of the current repository. we can set up a .gitignore file.
+	$  git log                // affiche l' historique 
+	$  git reflog
+	$  git checkout master 
+	$  git commit -a -m "description of the commit"     // -a tous les fichiers present dans l' index
+	$  git reset --hard          //  annulle les changement non commitéz
+	$  git checkout "identifiant du commit"
+	$  git branch     // liste des branches 
+	$  git branch new_branch    //  cree une nouvelle branche
+	$  git checkout branche     // se positionne dans une nouvelle branche. 
+	$  git commit --amend      // modifier le dernier commit
+	$  git reset --soft HEAD^    // supprimer l avant dernier commit  ( HEAD  , HEAD^^ ou HEAD~2)
+	$  git reset --hard  idCommit   
+	$  git merge brancheTomerge   
+	$  git branch -d the_local_branch    // supprimer une branche
+	$  git stash   // conserve les modifications sans les commiter
+	$  git stash pop   //recuperer les modification  
+	$  git stash apply  // equivaut a  stash pop + git stash pop  on lirese en conservant une copie.
+__________________
+	$  git remote add origin https://github.com/Njamen/N_School.git
+	$  git push -u origin master
+	$  git push --force  cesndogbabem dev:master 
+
+
+***** express commands  ******
+	$  npm init -y
+	$  npm install express --save
+	$  express -h         // help
+
+
+***** Vagrant commands *********
+	
+	$ vagrant up 
+	$ vagrant up --provision       // if any changes was made in the ;yaml file 
+	$ vagrant reload --provision
+	$ vagrant --help
+	$ vagrant ssh
+	$ vagrant halt
+
+***** mysql commands  **********
+
+	$ mysql -u homestead -p secret
+	$ show databases;
+	$ use dbName; 	
+	$ drop database dbName;
+	$ show tables; 
+	$ SHOW CREATE TABLE table_name;
+	$ ALTER TABLE table_name DROP FOREIGN KEY constraint_name;
+	$ SET foreign_key_checks = 0;   // or 1 to enable
+	$ SHOW PROCEDURE STATUS 
+	$ DROP PROCEDURE IF EXISTS procedureName
+
+
+******* linux commands ***********
+
+	$ sudo apt install --install-recommends linux-generic-hwe-18.04 xserver-xorg-hwe-18.04	  // lastest kernel 
+                  // delete a kernel version
+	$ sudo apt-get remove linux-headers-4.4.0-83 linux-headers-4.4.0-83-generic linux-image-4.4.0-83-generic linux-image-extra-34.4.0-83-generic --purge  
+	$ uname -r   // currents running kernel 
+	$ dpkg --list | grep linux-image  // list of kernel installed
+	$ sudo chmod -R 777 filepath.
+	$ chmod +x startApache.sh
+	$ ls -a    // afficher les fichiers caches
+	$ rw -r FolderName   // supprime tout ce qi est dans le dossier
+	$ sudo apt-get purge --auto-remove  package-name
+	$ sudo chmod -R 777 filepath.   // modidifie les permissions d u dossier et de tous les fichiers de ce dossier
+
+
+  ===> enable disable touchscren		
+https://www.tomordonez.com/disable-touchscreen-ubuntu.html
+	$  xinput --list
+	$  xinput disable 15
+	$  xinput enable 15
+
+********  nodejs command ***********
+	$  npm init             // to create pakage.json file 
+	$  npm install 
+
+******  sqlite commands *********
+
+******  laravel command *********
+
+	$ composer global require laravel/installer
+	$ laravel -V
+	$ composer create-project laravel/laravel   // we need to be in the directory where we want the project to be 	
+	$ laravel new Projectfolder
+
+*******  heroku commands  ***************
+
+        $ heroku apps   // liste des applications
+
+   	$ heroku login
+	$ heroku create   // creation du git remote par defaut le nom est heroku
+	$ heroku create --remote staging    // creation d un git remote de nom staging 
+	$ git remote -v    //  liste les remote distants (heroku githubd ) associe au rep git  
+	$ heroku git:remote -a thawing-inlet-61413
+	$ git push heroku master   //   envoie les donnees sur le remote heroku
+	$ git remote add ces-loulou https://github.com/user/repo.git    // add a new remote 
+	$ git push staging master  //   envoie les donnees sur le remote staging
+	$ git push heroku testbranch:master  // une branche testBranch a ete cree en local et cette 
+                                             // command envoie le contenu de cette branche sur heroku ou staging 
+	$ git push testces dev:master        // une branche dev a ete cree en local et cette 
+                                             // command envoie le contenu de cette branche sur testces   
+
+
+git push  ----  master
+
+
+	$ heroku logs --tail
+	$ heroku ps:scale web=1
+	$ heroku open
+	$ git remote rm heroku   // remote the git remote call heroku
+
+	$ heroku releases       heroku rollback v35
+
+	$ heroku local     //  start the application localy 
+	$ git config heroku.remote staging    //  to choose the staging environment as the defaukt
+	$ heroku apps:destroy    // destroy a heroku distant app
+        $ heroku ps -a fast-forest-85070  // informations about dynos hours remaining
+
+	$ git rm --cached config.js    // put config.js file in gitignore  after execute this command
+ 
+
+
+   /*****  plugin  Heroku Accounts  *********/  
+      url for info : https://github.com/heroku/heroku-accounts  
+       $ heroku plugins:install heroku-accounts    //  install the plugin 
+       $ heroku accounts:add personal              //  add a new heroku account named personal 
+                                                   //  after youwill be asked for email and password
+       $ heroku accounts:set personal              //  To switch to a different account named personal 
+       $ heroku accounts                           //  To list accounts : with a star on the actif account 
+       $ heroku accounts:current                   //  To find current account:
+       $ heroku accounts:remove personal           //  To remove an account name personnal 
+
+
+
+******  increase swap file in ubuntu 17.10 or upper  ***************************
+
+	$ sudo swapoff -a                             // Turn off all swap processes 
+	$ sudo dd if=/dev/zero of=/swapfile bs=1G count=8   // Resize the swap   if = input file  of = output file  bs = block size count = multiplier of blocks
+	$ sudo mkswap /swapfile          //  Make the file usable as swap       
+	$ sudo swapon /swapfile          // Activate the swap file 
+	$ grep SwapTotal /proc/meminfo  // Check the amount of swap available 
+
+
+****** Laravel configuration homestead *********
+
+	-> configurations in the Homestead.yaml  file
+	   Example 
+			folders:
+			    - map: ~/code
+			      to: /home/vagrant/code
+
+
+			sites:
+			    - map: wordpress.test
+			      to: /home/vagrant/code/wordpress
+
+			    - map: homestead.test
+			      to: /home/vagrant/code/laravelTestProjet/public
+
+
+			databases:
+			    - homestead
+			    - db_wordpress
+
+	-> Modify the /etc/hosts file 
+			127.0.0.1	localhost
+			127.0.1.1	NicanordUbuntuPC
+			192.168.10.10   homestead.test
+			192.168.10.10   wordpress.test
+
+
+
+path="/api/listOfSubject?listOfSubjectParameters,+%7B%22idClassroomCategory%22%3A1%7D+"
+path="/api/getListOfSubject?listOfSubjectParameters,{%0A%20%20%22idClassroomCategory%22:%202%0A}" 		
+
+
+
+
+
+********************        MYSQL   *************************
+SET FOREIGN_KEY_CHECKS=0;
+TRUNCATE TABLE table;
+SET FOREIGN_KEY_CHECKS=1;
+
+
+
+
+ CREATE TRIGGER increaseCountTable AFTER  insert
+    ON Vfolder
+  BEGIN
+    update VFOLDER_VFILE_COUNT
+     set vfolderNumber = vfolderNumber +1;
+  END;
+
+  CREATE TRIGGER increaseCountTable2 AFTER  insert
+    ON Vfile
+  BEGIN
+    update VFOLDER_VFILE_COUNT
+     set vfileNumber = vfileNumber +1;
+  END;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+CALL BluidMatricule(141,@matricule);
+SELECT @matricule AS matricule
+
+
+
+DELIMITER |
+CREATE PROCEDURE BluidMatricule( IN idStudent INT, OUT matricule VARCHAR(10))
+BEGIN
+
+	select 
+	 CONCAT(
+	   SUBSTRING(YEAR(CURRENT_DATE),3,2),
+	   'L',
+	   SUBSTRING('00000',1,5 - LENGTH(CONVERT(idStudent, CHAR))),   
+	   CONVERT(idStudent, CHAR)
+	 ) INTO matricule ;
+
+END|
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+DELIMITER $$
+ 
+CREATE PROCEDURE build_email_list (INOUT email_list varchar(4000))
+BEGIN
+ 
+ DECLARE v_finished INTEGER DEFAULT 0;
+        DECLARE v_email varchar(100) DEFAULT "";
+ 
+ -- declare cursor for employee email
+ DEClARE email_cursor CURSOR FOR 
+ SELECT email FROM employees;
+ 
+ -- declare NOT FOUND handler
+ DECLARE CONTINUE HANDLER 
+        FOR NOT FOUND SET v_finished = 1;
+ 
+ OPEN email_cursor;
+ 
+ get_email: LOOP
+ 
+ FETCH email_cursor INTO v_email;
+ 
+ IF v_finished = 1 THEN 
+ LEAVE get_email;
+ END IF;
+ 
+ -- build email list
+ SET email_list = CONCAT(v_email,";",email_list);
+ 
+ END LOOP get_email;
+ 
+ CLOSE email_cursor;
+ 
+END$$
+ 
+DELIMITER ;
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+SET @email_list = "";
+CALL build_email_list(@email_list);
+SELECT @email_list;
+
+************************************************************************************************************************************************************
+
+DROP PROCEDURE IF EXISTS addMatricule;
+
+DELIMITER | 
+CREATE PROCEDURE addMatricule ()
+BEGIN
+ 
+ DECLARE v_finished INTEGER ;
+ DECLARE idStudent INTEGER ;
+ DECLARE matricule varchar(100) ;
+ 
+
+ DEClARE student_id_cursor CURSOR FOR 
+ SELECT idStudent FROM Student;
+ 
+
+ DECLARE CONTINUE HANDLER 
+        FOR NOT FOUND SET v_finished = 1;
+ 
+ OPEN student_id_cursor;
+ 
+ get_idStudent: LOOP
+ 
+ FETCH student_id_cursor INTO idStudent;
+ 
+ IF v_finished = 1 THEN 
+ LEAVE get_idStudent;
+ END IF;
+ 
+  
+ CALL BluidMatricule(141,@matricule);
+ SELECT @matricule INTO matricule;
+ 
+   UPDATE Student
+   SET matricule =  matricule
+   WHERE idStudent = idStudent ;
+
+
+ 
+ END LOOP get_idStudent;
+ 
+ CLOSE student_id_cursor;
+ 
+END|
+ 
+DELIMITER ;
+
+call addMatricuel();
+
+
+///////////////////////////////////////////////////////////////////////////
+
+
+DROP PROCEDURE IF EXISTS addMatricule;
+
+DELIMITER | 
+CREATE PROCEDURE addMatricule ()
+BEGIN
+ 
+ DECLARE v_finished INTEGER DEFAULT 0;
+ DECLARE idStudent INTEGER ;
+ DECLARE v_email varchar(100) DEFAULT "";
+ DECLARE matricule varchar(100) ;
+ 
+
+  
+ CALL BluidMatricule(141,@matricule);
+ 
+   UPDATE Student
+   SET matricule =  "matricule"
+   WHERE idStudent = 1 ;
+
+
+ 
+END|
+ 
+DELIMITER ;
+
+
+CALL addMatricule()
+
+
+
+
+/////////////////////////////////////////////////////
+
+le bon code
+
+DROP PROCEDURE IF EXISTS addMatricule;
+
+DELIMITER | 
+CREATE PROCEDURE addMatricule()
+BEGIN
+ 
+ DECLARE v_finished INTEGER  DEFAULT 0;
+ DECLARE idS INTEGER DEFAULT 0;
+ DECLARE matricule varchar(100) ;
+ 
+ DEClARE student_id_cursor CURSOR FOR 
+ SELECT idStudent FROM Student;
+  
+ 
+ 
+
+DECLARE CONTINUE HANDLER 
+        FOR NOT FOUND SET v_finished = 1;
+  
+ 
+  OPEN student_id_cursor;
+   
+   get_idStudent: LOOP
+     
+  FETCH student_id_cursor INTO idS;
+  
+   IF v_finished = 1 THEN 
+ LEAVE get_idStudent;
+ END IF;
+ 
+CALL BluidMatricule(idS,@matricule);
+SELECT @matricule INTO matricule;
+ 
+  
+   UPDATE Student
+   SET matricule =  matricule
+   WHERE idStudent = idS ;
+ 
+ END LOOP get_idStudent;
+
+ CLOSE student_id_cursor;
+ 
+END|
+ 
+DELIMITER ;
+
+
+CALL addMatricule();
+
+
+////////////////////////////
+
+Trigger
+
+
+
+DROP TRIGGER IF EXISTS insertMatriculeTrigger ;
+DELIMITER |
+CREATE TRIGGER insertMatriculeTrigger 
+    BEFORE INSERT ON Student
+    FOR EACH ROW 
+BEGIN
+ DECLARE matricule varchar(100) ;
+  DECLARE idS INTEGER ;
+
+SELECT `auto_increment` into idS FROM INFORMATION_SCHEMA.TABLES
+WHERE table_name = 'Student';
+
+CALL BluidMatricule(idS,@matricule);
+SELECT @matricule INTO matricule;
+ 
+  
+
+   SET NEW.matricule =  matricule;
+
+
+
+    
+END|
+DELIMITER ;
+
+
+
+
+START TRANSACTION ;
+  INSERT INTO clusters (id)
+    VALUES (NULL);
+  UPDATE clusters
+    SET `order` = id
+    WHERE id = LAST_INSERT_ID();
+COMMIT ;
+
+
+
+
+
+
+
+
+
+///////////////////////
+
+
+ERROR: The Android Gradle plugin supports only Kotlin Gradle plugin version 1.3.0 and higher.
+The following dependencies do not satisfy the required version:
+root project 'LeanAndroidDev' -> org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.71
+Affected Modules: app
+
+
+http://pointofandroid.blogspot.com/2018/03/printsave-pdf-from-webview.html
+https://stackoverflow.com/questions/35261271/createprintdocumentadapter-replacement
+
+------------------------------------------------------------------------------------------------------
+
+disable user interactions
+
+    getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                               WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+enable user interaction 
+getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+
+   <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/progress_bar_layout"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+   </FrameLayout>
+
+
+progressbarContener_l_id.visibility = View.GONE
+
+
+val progressDailogBox = ProgressBarDialogBox.GetProgressBarDialogBox(activityListener as AppCompatActivity).apply {
+            show()
+        }
+progressDailogBox.dismiss()
+-------------------------------------------------------------------------------
+24/02/2019   Working on adding mainteacher in classAYear. 
+
+
+ER_WRONG_VALUE_COUNT_ON_ROW -> ER_WRONG_VALUE_COUNT_ON_ROW: Column count doesn't match value count at row
+-------------------------------------------------------------------------------
+01/03/2019
+
+kotlin lambda function 
+
+val lambdaName : Type = { argumentList -> codeBody }
+
+Exemple 
+val lambdaName  = { numbre : Int  ->  
+ toast("the number is $numbre")
+ numbre
+}
+
+call     val n = lambdaName(5)
+
+typt declaration 
+
+val that : Int -> Int = { three -> three }
+val more : (String, Int) -> String = { str, int -> str + int }
+val noReturn : Int -> Unit = { num -> println(num) }
+----------------------------------------------------------------------------------------------------
+07/03/2019
+Injection des dependances 
+
+@Component
+interface CarComponent {
+    fun getCar() : Car
+    fun inject(mainActivity: MainActivity)
+}
+
+class Car {
+
+    val TAG = "Car"
+
+    var engine: Engine
+    var wheels: Wheels
+
+    @Inject   // it is dagger which create the instance of Engine an Wheels may the heve also inject 
+    constructor(engine: Engine, wheels: Wheels) {
+        this.engine = engine
+        this.wheels = wheels
+    }
+
+    fun drive() {
+        Log.d(TAG, " Car Driving...")
+    }
+
+}
+
+public class MainActivity extends AppCompatActivity {
+
+    @Inject
+    Car car;
+    private Car car2
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        CarComponent carComponent = DaggerCarComponent.create();
+        carComponent.inject(this);
+        car2 = component.getCar() 
+        
+        car2.drive();
+        car.drive();
+    }
+}
+-----------------------------------------------------------------------------------------------
+14/03/2019
+
+class Info(val text: String)
+
+@Module class InfoModule(val text : String) {
+    @Provides
+    fun provideInfo(): Info {
+        return Info(text)
+    }
+}
+
+@Component(modules = [InfoModule::class, OrtheModule::class])
+interface MagicBoxComponent {
+    fun inject(app: MainActivity)
+}
+
+
+class MainActivity : AppCompatActivity() {
+
+    @Inject lateinit var info: Info
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        DaggerMagicBoxComponent.builder().InfoModule("bonjour").OrtheModule().build()
+                 
+        text_view.text = info.text
+    }
+}
+
+-----------------------------------------------------------------------------------------------
+20/03/2019
+View model with custom parameter
+
+class LoginViewmodel( val name:String):ViewModel() {}
+
+class CustomViewModelFactory(private val test: String) : ViewModelProvider.NewInstanceFactory() {
+    override fun <T : ViewModel?> create(modelClass: Class<T>?): T {
+        return LoginViewmodel(test) as T
+    }
+}
+
+in the activity we put this 
+
+val viewModel = ViewModelProviders.of
+(this,CustomViewModelFactory("somerandomvalue")).get(LoginViewmodel::class.java)
+
+		View model with custom parameter avoiding to create one factory for one viewModel
+		by sendind a lambda 
+
+class BaseViewModelFactory<T>(val creator: () -> T) : ViewModelProvider.Factory {
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        return creator() as T
+    }
+}
+
+val vm: UserViewModel by lazy {
+        ViewModelProviders.of(this, BaseViewModelFactory { 
+           UserViewModel(intent.getIntExtra(USER_ID, -1)) 
+        }).get(UserViewModel::class.java)
+}
+
+-----------------------------------------------------------------------------------------
+20/03/2019
+View model with custom parameter + dagger 
+
+class MyViewModelFactory @Inject constructor(private val repository: DataRepository): ViewModelProvider.Factory {
+     override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        return if (modelClass.isAssignableFrom(MyViewModel::class.java!!)) {
+            MyViewModel(this.repository) as T
+        } else {
+            throw IllegalArgumentException("ViewModel Not Found")
+        }
+    }
+}
+
+In acticity
+
+@Inject lateinit val viewModeFactory : MyViewModelFactory    // repository parameter need to be create by dagger
+val homeViewModel = ViewModelProviders.of(this, this.viewModeFactory).get(MyViewModel::class.java)
+
+
+                var apiResponseData : ApiResponseData? = null
+                try {
+                }catch (e :Exception){
+                    Toast.makeText( GestionEApplication.theContext, "ERROR2 : error when connecting ...", Toast.LENGTH_LONG).show()
+                }
+-----------------------------------------------------------------------------------------
+30-03-2019
+SELECT 
+ name,
+ TO_DATE(date1, 'DD-MON-YYYY HH:MI AM')
+FROM TableX
+
+UNION
+
+SELECT
+ name,
+ TO_DATE(date2, 'DD-MON-YYYY HH:MI AM')
+FROM TableY
+
+ORDER BY 2 DESC;
+----------------------------------------------------------------------------------------------
+31-03-2019
+        Snackbar.make(
+                drawer_layout, // Parent view
+                "Hello Snackbar!", // Message to show
+                Snackbar.LENGTH_SHORT // How long to display the message.
+        ).show()
+
+
+kotlin detructuring 
+{ a -> ... } // one parameter
+{ a, b -> ... } // two parameters
+{ (a, b) -> ... } // a destructured pair
+{ (a, b), c -> ... } // a destructured pair and another parameter
+
+
+
+var map: HashMap<Int, Person> = HashMap() 
+map.put(1, person) 
+for((key, value) in map){
+    println("Key: $key, Value: $value")
+}
+---------------------------------------------------------------------------------------------
+01-04-2019
+
+      val idClassroomCategory = listOfSubjectParameters["idClassroomCategory"]
+      val idClassAYear = listOfSubjectParameters["idClassAYear"]
+
+ 
+          val dynamicObject = object() 
+        
+	for((key, value) in listOfSubjectParameters.){
+	    println("Key: $key, Value: $value")
+            
+            dynamicObject.putPRopertyValueAndname(key, value)   // is it possible 
+
+	}
+
+
+https://stackoverflow.com/questions/28150124/javascript-anonymous-object-in-kotlin
+
+--------------------------------------------
+04-04-2019
+list with lambda 
+   --> count with conditions
+val nums = listOf(4, 5, 3, 2, 1, -1, 7, 6, -8, 9, -12)
+val len = nums.count()
+println("There are $len elements")
+val size = nums.size
+println("The size of the list is $size")    
+val n1 = nums.count { e -> e < 0 }
+println("There are $n1 negative values")
+val n2 = nums.count { e -> e % 2 == 0 }
+println("There are $n2 even values")
+
+    --->  for in alternative 
+words.forEach { e -> print("$e ") }
+    println()
+words.forEachIndexed({i, e -> println("words[$i] = $e")})
+
+--------> Sorted
+
+fun main(args: Array<String>) {
+
+    val nums = listOf(11, 5, 3, 8, 1, 9, 6, 2)
+
+    val sortAsc = nums.sorted()
+    println(sortAsc)
+
+    val sortDesc = nums.sortedDescending()
+    println(sortDesc)
+
+    val revNums = nums.reversed()
+    println(revNums)
+
+    val cars = listOf(Car("Mazda", 6300), Car("Toyota", 12400),
+            Car("Skoda", 5670), Car("Mercedes", 18600))
+
+    val res = cars.sortedBy { car -> car.name }
+    res.forEach { e -> println(e) }
+
+    println("*************")
+
+    val res2 = cars.sortedByDescending { car -> car.name }
+    res2.forEach { e -> println(e) }
+}
+
+    -----------> Kotlin List contains
+
+-------------------------------------------
+10-04-2019
+
+SELECT  t1.idStudent, t1.studentNames, t1.studentFirstNames, t1.bithDate, t1.birthPlace, t1.idStudentClassAYear,
+        t1.average ,  t1.classPosition, t1.sexe , t1.present ,
+        t1.matricule , t1.somme , t1.sommeCoef, t1.redouble, 
+        t2.idAbsenceHoursInfo, t2.abscenceHours, t2.justifiedAbscenceHours 
+
+FROM(  SELECT st.idStudent, st.studentNames, st.studentFirstNames, st.bithDate, st.birthPlace, scy.idStudentClassAYear,
+                        null as average ,  null as classPosition, st.sexe , scy.present ,
+                        st.matricule , null as somme , null as sommeCoef, scy.redouble, 
+                        null as idAbsenceHoursInfo, null as abscenceHours, null as justifiedAbscenceHours 
+        FROM   StudentClassAYear scy,   Student st 
+        WHERE  scy.student = st.idStudent and scy.classAYear = ${idClassAYear} 
+     ) t1          
+LEFT JOIN (
+       SELECT st.idStudent,  scy.idStudentClassAYear,               
+              ahi.idAbsenceHoursInfo, ahi.abscenceHours, ahi.justifiedAbscenceHours 
+       FROM   StudentClassAYear scy,   Student st , AbsenceHoursInfo ahi    
+       WHERE  scy.student = st.idStudent and scy.classAYear = ${idClassAYear} and
+              scy.idStudentClassAYear = ahi.studentClassAYear 
+              and ahi.markCategory = ${idMarkCategory}
+) t2
+ON  t1.idStudentClassAYear  = t2.idStudentClassAYear
+Order by t1.studentNames asc
+
+
+------------------------------------------
+
+
+SELECT d1.idStudent, d1.studentNames, d1.studentFirstNames, d1.bithDate, d1.birthPlace, d1.idStudentClassAYear,
+       d1.average ,  d1.classPosition, d1.sexe , d1.present , d1.matricule , d1.somme , d1.sommeCoef, d1.redouble, 
+       null as idAbsenceHoursInfo, 
+       (COALESCE(d1.abscenceHours,0)+COALESCE(d2.abscenceHours,0)) as abscenceHours, 
+       (COALESCE(d1.justifiedAbscenceHours,0)+COALESCE(d2.justifiedAbscenceHours,0)) as justifiedAbscenceHours 
+       
+FROM( 
+        SELECT  t1.idStudent, t1.studentNames, t1.studentFirstNames, t1.bithDate, t1.birthPlace, t1.idStudentClassAYear,
+                t1.average ,  t1.classPosition, t1.sexe , t1.present ,
+                t1.matricule , t1.somme , t1.sommeCoef, t1.redouble, 
+                t2.idAbsenceHoursInfo, t2.abscenceHours, t2.justifiedAbscenceHours 
+
+        FROM(  SELECT st.idStudent, st.studentNames, st.studentFirstNames, st.bithDate, st.birthPlace, scy.idStudentClassAYear,
+                                null as average ,  null as classPosition, st.sexe , scy.present ,
+                                st.matricule , null as somme , null as sommeCoef, scy.redouble, 
+                                null as idAbsenceHoursInfo, null as abscenceHours, null as justifiedAbscenceHours 
+                FROM   StudentClassAYear scy,   Student st 
+                WHERE  scy.student = st.idStudent and scy.classAYear = 5 
+            ) t1          
+        LEFT JOIN (
+            SELECT st.idStudent,  scy.idStudentClassAYear,               
+                    ahi.idAbsenceHoursInfo, ahi.abscenceHours, ahi.justifiedAbscenceHours 
+            FROM   StudentClassAYear scy,   Student st , AbsenceHoursInfo ahi    
+            WHERE  scy.student = st.idStudent and scy.classAYear = 5 and
+                    scy.idStudentClassAYear = ahi.studentClassAYear 
+                    and ahi.markCategory = 3
+        ) t2
+        ON  t2.idStudentClassAYear  = t1.idStudentClassAYear
+        
+    ) d1
+LEFT JOIN(
+    SELECT  t3.idStudent,  t3.idStudentClassAYear,        
+            t4.idAbsenceHoursInfo, t4.abscenceHours, 
+            t4.justifiedAbscenceHours 
+
+    FROM(  SELECT st.idStudent, st.studentNames, st.studentFirstNames, st.bithDate, st.birthPlace, scy.idStudentClassAYear,
+                            null as average ,  null as classPosition, st.sexe , scy.present ,
+                            st.matricule , null as somme , null as sommeCoef, scy.redouble, 
+                            null as idAbsenceHoursInfo, null as abscenceHours, null as justifiedAbscenceHours 
+            FROM   StudentClassAYear scy,   Student st 
+            WHERE  scy.student = st.idStudent and scy.classAYear = 5 
+        ) t3          
+    LEFT JOIN (
+        SELECT st.idStudent,  scy.idStudentClassAYear,               
+                ahi.idAbsenceHoursInfo, ahi.abscenceHours, ahi.justifiedAbscenceHours 
+        FROM   StudentClassAYear scy,   Student st , AbsenceHoursInfo ahi    
+        WHERE  scy.student = st.idStudent and scy.classAYear = 5 and
+                scy.idStudentClassAYear = ahi.studentClassAYear 
+                and ahi.markCategory = 4
+    ) t4
+    ON  t3.idStudentClassAYear  = t4.idStudentClassAYear
+    
+)  d2    
+ON d1.idStudentClassAYear = d2.idStudentClassAYear 
+order by d1.studentNames 
+
+
+
+///////////////////////////////
+
+	 cd ~/Laboratoire2020/APPS_ANDROID/N_School
+	 cd ~/Laboratoire2020/RustApps/webApp  
+	 hints & kotlinNotes & rustNotes & personalNotes & usualCommands & nodeJsNotes & usualCommands
+	 code . 
+
+
+
+wandershare converter
+wandershare filmora 
+
+
+
+https://medium.com/firebase-tips-tricks/how-to-read-data-from-firebase-realtime-database-using-get-269ef3e179c5 
+
+
+cpbpmc@gmail.com
+
+
+
+
+
+DATABASE_HOST  mysql-smallces.alwaysdata.net   mysql-cpbpmc.alwaysdata.net
+
+dbname smallces_cpbpmc       cpbpmc_dbname
+
+dbuser smallces_dbuser      cpbpmc_dbuser
+
+password  comptenlg.ge.smallces-1    comptenlg.ge.cpbpmc-1
+
+nlabsgroup.ge.smallces@gmail.com
+
+comptenlg.ge.smallces-1
+
+
+
+mysql://cpbpmc_dbuser:comptenlg.ge.cpbpmc-1@mysql-cpbpmc.alwaysdata.net:3306/cpbpmc_dbname
+
+mysql://smallces_dbuser:comptenlg.ge.smallces-1@mysql-smallces.alwaysdata.net:3306/smallces_cpbpmc
+
+
+
+Une vie tranquille et modeste apporte plus de joie que la recherche du succès, qui implique une agitation permanente.
+
+
+git reset --soft ^HEAD
+
+
+databaseweb_test3
+
+

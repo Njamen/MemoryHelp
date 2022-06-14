@@ -1,0 +1,261 @@
+Credentials 
+[NlabsGroup.2022]
+
+
+
+// install anaconda 
+
+hints & kotlinNotes & rustNotes & personalNotes & usualCommands & nodeJsNotes & usualCommands
+
+://www.trucnet.com/tap-touche-5/
+
+
+github profile link 
+
+https://github.com/Njamen/
+https://github.com/Njamen/N_School/
+
+
+linkedin profile
+https://www.linkedin.com/in/nicanord-njamen
+
+twitter profile link 
+https://twitter.com/NjamenNyakam
+username NjamenNyakam
+
+
+
+shared folder bettween ubuntu and windows 
+https://www.c-sharpcorner.com/article/how-to-share-files-between-ubuntu-and-windows-10/
+
+// projets 
+
+create page text files and put them to githuh so we can easyly see then on a phone or a tablet 
+and may be we can use the github Api programmatically forr and aap android 
+a kind of bloc notes s 
+
+
+cpbpmc@gmail.com
+comptenlg.ge.cpbpmc-1                   // password 
+https://git.heroku.com/cpbpmc-app.git
+https://cpbpmc-app.herokuapp.com/
+
+
+
+nlabsgroup.ge.smallces@gmail.com
+nlg.ge.smallces-1                 //password  
+
+
+
+
+
+
+
+//  config lycee d Omeng
+lyceeomeng-nschoolsystem    //  heroku name app
+nlabsgroup.ge.ecoleconviction@gmail.com  // owner   
+ecoleconvicion-1    //password  
+
+
+//
+
+
+//  config ces de ndogbabem
+cesndogbabem-nschoolsystem   //  heroku name app
+nlabsgroup.ge.ecoleconviction@gmail.com  // owner   
+ecoleconvicion-1    //password  
+ 
+
+
+//
+
+
+
+rust personal issue
+/*
+pub type ResponseRoute = ApiResponse; 
+
+fn bluid_succes_response<T>(data: T) ->  JsonValue  { 
+
+      ApiResponse {
+        json: json!(Data),
+        status: Status::Ok,
+      }
+
+}
+
+*/
+
+
+
+---------------------------------
+carto minfopra
+Login P-084203 
+password alpha1Beta2
+
+
+
+
+---------------------------------
+ drh minesec 
+EMGBWANG ,  PASSWORD : mballa
+
+
+libassoudaniel2019@gmail.com
+libassou
+
+Q-096101  GOUARA MATRICULE
+P-084203  NJAMEN NYAKAM NICANORD
+773963-G  Goviata emmanuel
+590231-A   Kampete bagao  (Baba tchede)
+617149-I  Doubla Massai
+F-083748  Mme Mago
+LIBASSOU  psw : libassou
+EMGBWANG ,  PASSWORD : mballa
+
+
+
+// share files between UBUNTU and windows  
+https://itsfoss.com/share-folders-local-network-ubuntu-windows/
+
+auto lo
+iface lo inet loopback
+
+auto enp1s0
+iface enp1s0 inet manual
+
+auto wlp2s0
+iface wlp2s0 inet manual
+
+auto br0
+iface br0 inet dhcp
+bridge_ports enp1s0 wlp2s0
+
+
+==> Scrum.  
+
+Jira is one
+team city from jetbrains
+
+We have to work in Agile way, because we don't have that much time
+multiple teams can work at the same time
+and every sprint/iteration would give us a working version of the app
+
+
+
+the name = erem
+the project management approach = scrum 
+the app to manage = clickup.com
+first step = getting familiar with scrium and the use case diagram
+
+
+P059412974788J   nui
+
+https://www.linuxbabe.com/ubuntu/install-lamp-stack-ubuntu-20-04-server-desktop
+https://www.linuxbabe.com/ubuntu/install-phpmyadmin-apache-lamp-ubuntu-20-04
+
+websites 
+https://www.ameyalokare.com
+
+
+---------------------------------------
+njamennicanord@gmail.com
+overflow1
+
+njamennicanord@gmail.com
+wordpress
+
+njamennicanord@gmail.com
+openclassroom
+
+njamennicanord@gmail.com
+github1
+--------------------------------- 
+F-083748  Mme Mago
+
+---------------------------------
+ drh minesec 
+EMGBWANG ,  PASSWORD : mballa
+
+LIBASSOU ; libassou
+libassoudaniel2019@gmail.com
+libassou
+
+--------------------------------
+hledafoulla@gmail.com
+password 98565535 
+
+@echo off : 
+del  :/c 
+del  :/c 
+
+
+
+=>  The HEAD method
+https://condor.depaul.edu/dmumaugh/readings/handouts/SE435/HTTP/node14.html
+The HEAD method is used to ask only for information about a document, not for the document itself. HEAD is much faster than GET, as a much smaller amount of data is transferred. It's often used by clients who use caching, to see if the document has changed since it was last accessed. If it was not, then the local copy can be reused, otherwise the updated version must be retrieved with a GET. The metainformation contained in the HTTP headers in response to a HEAD request should be identical to the information sent in response to a GET request. This method can be used for obtaining metainformation about the resource identified by the request URI without transferring the data itself. This method is often used for testing hypertext links for validity, accessibility, and recent modification. 
+
+=> handing http request error 
+	https://www.baeldung.com/rest-api-error-handling-best-practices
+        https://blog.restcase.com/rest-api-error-codes-101/ 
+
+=> how to save most used commands on linux terminal. 
+      https://www.ostechnix.com/save-commands-terminal-use-demand/
+      https://ubuntuforums.org/showthread.php?t=1058993 
+
+=> "I got into programming because I wanted to make the computer do something"
+
+=> compterust  ,  https://users.rust-lang.org/
+==> hebergement 
+https://www.cloud.blogvisa.com/  
+
+
+
+**********************************************************************
+accounts 
+
+njamen.n3@gmail.com
+compteNicanord_n3
+
+njamen.n3@gmail.com  
+google2
+
+njamen.n3@gmail.com  
+HeRoKu_02
+
+njamen.n3@gmail.com
+github2 
+
+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
+
+njamen.n3@gmail.com
+twitter2
+
+njamen.n3@gmail.com
+linkedin2
+
+njamen.n3@gmail.com
+facebook2
+
+
+///////////////    GENERAL INFORMATIONS  /////////////////////////////// 
+
+==> api rest best pratices 
+
+https://medium.com/@mwaysolutions/10-best-practices-for-better-restful-api-cbe81b06f291
+https://www.merixstudio.com/blog/best-practices-rest-api-development/
+
+
+==> Shared files windows 10 ubuntu 
+  https://www.c-sharpcorner.com/article/how-to-share-files-between-ubuntu-and-windows-10/
+   smb://10.42.0.2/shared folder
+
+
+
+
+"Une vie tranquille et modeste apporte plus de joie que la recherche du succès, qui implique une agitation permanente".
+
+"« Le monde a modifié son regard sur la Russie.
+On ne nous fait plus la leçon comme à des écoliers.
+On nous respecte et on sait devoir compter avec nous.
+La Russie a retrouvé la place qui lui est due dans le monde. Elle a changé, elle est plus forte et plus prospère.    Dmitri MEDVEDEV,

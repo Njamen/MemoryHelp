@@ -1,0 +1,53 @@
+ ==> rust web app gestionE
+ 	$ DATABASE_URL=mysql://152871_yanord:yanord@mysql-databaseweb.alwaysdata.net:3306/databaseweb_test2 heroku local 
+ 	$ DATABASE_URL=mysql://152871_yanord:yanord@mysql-databaseweb.alwaysdata.net:3306/databaseweb_test2 PORT=8010 ROCKET_ENV=production cargo run
+ 	$ ADDRESS=192.168.43.40  cargo run 
+ 	$ ADDRESS=192.168.43.40 cargo watch -x run
+ 	$  heroku logs --tail
+ 	$ IBUS_ENABLE_SYNC_MODE=1 ibus-daemon -xrd
+ 	$ heroku logs --remote testces  --tail    /// 
+ 	$ git remote -v    // liste le nom des remotes 
+ 	$ APP_MIN_VERSION=1.1.2 DATABASE_HOST=mysql-databaseweb.alwaysdata.net DATABASE_NAME=databaseweb_test3 DATABASE_USER=DATABASE_USER DATABASE_USER_PASSWORD=yanord ID_APPLICATION=TEST_CES ID_MATRICULE=T node app semiLocal
+ 	$ cargo test
+	$ cargo test name_of-the-test_function
+	$ git push --force origin feature-2 
+	$ git push cesndogbabem  master    // envoie la branche master sur le remote cesNdogbabem    
+		$ git remote -v    // liste le nom des remotes 
+		$ git remote add ces-loulou https://github.com/user/repo.git    // add a new remote 
+	
+	
+	$ cd ~/Laboratoire2020/RustApps/webApp  
+	$ hints & kotlinNotes & rustNotes & personalNotes & usualCommands & nodeJsNotes & usualCommands	
+	$ git reset --soft HEAD^ 
+	$ scrcpy
+	$ git push heroku  developpement:master  
+	$ git push heroku master   //   envoie les donnees sur le remote heroku
+
+	
+	git push heroku master:main
+
+	
+	//git remote add cpbpmc https://git.heroku.com/cpbpmc-app.git  
+	smb://10.42.0.2/shared folder
+	UPDATE mysql.user SET password = PASSWORD('new_password') WHERE user = 'root';
+	smb://10.42.0.2/sharedfolder
+	
+	
+	
+	merge thier alternatice  
+	   $  git checkout developpement 
+	   $  git merge  -s ours master
+	   $  git checkout -B master
+
+http://localhost/adminer/
+
+ mysql commands 	
+	select host, user, password from mysql.user; 
+	GRANT ALL PRIVILEGES ON *.* TO 'yanord'@'localhost';
+	CREATE USER 'yanord'@'localhost' IDENTIFIED BY 'yanord';
+	
+	
+	
+	git push origin  master    send NSchool to github
+	git push cesndogbabem  master
+

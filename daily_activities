@@ -1,0 +1,1132 @@
+SELECT  scy.idStudentClassAYear , st.studentNames
+FROM StudentClassAYear scy , Student st
+WHERE scy.student = st.idStudent and scy.classAYear = 1
+
+
+UPDATE StudentAverage sa
+SET sa.average = 11.92
+WHERE sa.studentClassAYear = 952 and sa.markCategory = 1
+
+UPDATE StudentAverage sa
+SET sa.average = 11.92 , sa.somme = 0, sa.sommeCoef = 0 
+WHERE 
+ sa.studentClassAYear = 952 and 
+ sa.markCategory = 1
+ 
+ UPDATE StudentAverage sa SET sa.average = 11.92 , sa.somme = 0, sa.sommeCoef = 0 
+WHERE  sa.studentClassAYear = 952 and sa.markCategory = 1
+
+--------------------------------------------------------------------------
+
+SELECT DISTINCT st.studentNames, st.matricule, scy.idStudentClassAYear 
+FROM StudentClassAYear scy, Student st
+WHERE st.idStudent = scy.student and st.matricule like "21L00580"
+
+--------------------------------------------------------------------------
+
+UPDATE StudentAverage sa SET sa.average = 7.72 , sa.somme = 0, sa.sommeCoef = 0 
+WHERE  sa.studentClassAYear = 1252 and sa.markCategory = 1;
+
+
+UPDATE StudentAverage sa SET sa.average = 7.72 , sa.somme = 0, sa.sommeCoef = 0 
+WHERE  sa.studentClassAYear = 1252 and sa.markCategory = 2;
+
+
+
+226
+
+
+19L00141  yimi 4all
+
+
+21L00580
+
+
+idscy 1252
+
+3eme All 
+ Seini y 9.01  7.97     21L00578    1250 scyid
+ wouya   9.63   8.81   21L00579     1251 
+ 
+ ----------------------------------
+ 
+ 21L00580
+ 
+ 
+ 
+ 
+ 
+ 21L00580
+ 
+ 
+ //////////////////////
+ 
+ ssy 13  ids 12  idsy 21
+ 
+ 
+ /////////////////////////////////
+ 
+ SELECT distinct  sy.idSchoolYear, sy.year1, sy.year2 , ssy.idSchoolSchoolYear
+        FROM  School s, SchoolYear sy, SchoolSchoolYear ssy, SchoolCategory scat  
+        WHERE ssy.school = s.idSchool and ssy.schoolYear = sy.idSchoolYear and 
+              scat.idSchoolCategory= s.schoolCategory and s.idSchool =  1
+ 
+ 
+ 
+ 2006-00-00
+ 
+ 
+ SELECT st.idStudent, st.studentNames, st.studentFirstNames, st.bithDate, 
+             st.birthPlace, st.sexe, scy.present, st.matricule, scy.idStudentClassAYear,
+             scy.redouble
+      FROM Student st, ClassAYear cy, StudentClassAYear scy
+      WHERE cy.idClassAYear = 1 and scy.classAYear = cy.idClassAYear
+            and scy.student = st.idStudent
+ 
+ 
+ _______________________________________________________________________________________________
+
+
+Mme ______________________________________
+
+ La famille Dipanda a la joie de vous annoncer la naissance de leur premier enfant nomme Orlando.
+ A cet effet, elle organise une soiree dedicace afin d'acceuillir solennellement ce nouveau ne.
+ Vous etes prier de bien vouloir honorer par votre presence cette ceremonie qui se tiendra au quartier Domayo kodek
+ a partir de 16h. 
+ 
+ NB : Tenue consequente vivement recommande 
+ 
+ 
+ The Dipanda family is delighted to announce the birth of their first child named Orlando.
+ To this end, she is organizing a dedication evening to solemnly welcome this new baby.
+ You are kindly requested to honor by your presence this ceremony which will be held in the Domayo kodek district.
+ starting at 16h.
+ 
+ NB: Consistent dress strongly recommended
+
+
+ 
+ 
+ %7B    "idClassAYear" : 1  "idSubject" : 1
+"idMarksCategory": 1     %7D
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+SELECT st.idStudent, st.studentNames, st.studentFirstNames, st.bithDate, 
+             st.birthPlace, 
+             null as idMarks, null as markCategory, null as mark,
+               st.sexe, scy.present, st.matricule, scy.idStudentClassAYear,
+             scy.redouble, null as markComment
+FROM  Student st, ClassAYear cy, StudentClassAYear scy
+WHERE cy.idClassAYear = :id_class_a_year and scy.classAYear = cy.idClassAYear
+      and scy.student = st.idStudent" 
+
+
+
+
+
+
+
+SELECT st.idStudent, st.studentNames, st.studentFirstNames, st.bithDate, 
+             st.birthPlace, 
+             null as idMarks, null as markCategory, null as mark,
+               st.sexe, scy.present, st.matricule, scy.idStudentClassAYear,
+             scy.redouble, null as markComment
+FROM  Student st, ClassAYear cy, StudentClassAYear scy
+WHERE cy.idClassAYear = 1 and scy.classAYear = cy.idClassAYear
+      and scy.student = st.idStudent
+      
+      
+SELECT st.idStudent, st.studentNames, st.studentFirstNames, st.bithDate, 
+     st.birthPlace, mk.idMarks, mk.markCategory, mk.mark, 
+     st.sexe, scy.present, st.matricule,  scy.idStudentClassAYear,
+     scy.redouble , mk.markComment  
+FROM   Marks mk, StudentClassAYear scy,   Student st    
+WHERE  mk.studentClassAYear = scy.idStudentClassAYear and 
+     scy.student = st.idStudent and scy.classAYear = 1  and 
+     mk.markCategory = 1 and mk.subject = 19       
+
+
+
+
+
+
+SELECT  t.idSubject, t.subjectName, t.coefficient, t.idClassroomCategory, 
+              t.classroomCategoryName, t.idTeachedSubjects as idTeachedSubjects , 
+              null  as idCoefficient ,  t2.idTeacher, 
+              t2.teacherName, t2.idTeacherClassAYearSubject, t.subjectCategoryId,
+              t.subjectCategoryName, t.cycle                         
+      FROM  ( SELECT sbj.idSubject, sbj.subjectName, ts.coefficient, ccty.idClassroomCategory, 
+                     ccty.classroomCategoryName, ts.idTeachedSubjects,
+                     ts.subjectCategoryId, subC.subjectCategoryName, subC.cycle                   
+              FROM TeachedSubjects  ts, ClassroomCategory ccty, Subject sbj,
+                   SubjectCategory  subC 
+              WHERE ts.classroomCategory = :id_classroom_category and           
+                    ts.classroomCategory = ccty.idClassroomCategory and 
+                    subC.idSubjectCategory = ts.subjectCategoryId and 
+                    ts.subject = sbj.idSubject and ts.schoolSchoolYear = :id_schoolschool_year
+            ) t 
+      LEFT JOIN       
+           (
+              SELECT tea.idTeacher ,  tea.teacherName ,                             
+                     tcys.idTeacherClassAYearSubject, tsub.subject
+              FROM   TeacherClassAYearSubject tcys, Teacher tea,
+                     TeachedSubjects   tsub
+              WHERE tcys.classAYearId = :id_class_a_year and tea.idTeacher = tcys.teacherId 
+                    and tsub.idTeachedSubjects = tcys.teachedSubject 
+              union
+              SELECT null as idTeacher,                  
+                      null as teacherName,                             
+                      tcys.idTeacherClassAYearSubject, tsub.subject
+              FROM  TeacherClassAYearSubject tcys  , TeachedSubjects   tsub 
+              WHERE tcys.classAYearId = :id_class_a_year and 
+                    tsub.idTeachedSubjects = tcys.teachedSubject  and
+                    tcys.teacherId is null 
+           ) t2
+      ON   t.idSubject = t2.subject 
+      order by t.subjectCategoryId, t.idSubject 
+
+
+
+SELECT t1.idStudent, t1.studentNames, t1.studentFirstNames, t1.bithDate, 
+       t1.birthPlace, t2.idMarks, t2.markCategory, t2.mark,
+       t1.sexe, t1.present, t1.matricule, t1.idStudentClassAYear,
+       t1.redouble, t2.markComment
+
+FROM
+	(
+		SELECT st.idStudent, st.studentNames, st.studentFirstNames, st.bithDate, 
+			     st.birthPlace, 
+                            st.sexe, scy.present, st.matricule, scy.idStudentClassAYear,
+			     scy.redouble
+		FROM  Student st, ClassAYear cy, StudentClassAYear scy
+		WHERE cy.idClassAYear = 1 and scy.classAYear = cy.idClassAYear
+		      and scy.student = st.idStudent
+	) t1
+LEFT JOIN 
+	(      
+		SELECT st.idStudent, st.studentNames, st.studentFirstNames, st.bithDate, 
+		     st.birthPlace, mk.idMarks, mk.markCategory, mk.mark, 
+		     st.sexe, scy.present, st.matricule,  scy.idStudentClassAYear,
+		     scy.redouble , mk.markComment  
+		FROM   Marks mk, StudentClassAYear scy,   Student st    
+		WHERE  mk.studentClassAYear = scy.idStudentClassAYear and 
+		     scy.student = st.idStudent and scy.classAYear = 1  and 
+		     mk.markCategory = 1 and mk.subject = 19     
+	) t2
+ON t1.idStudentClassAYear = t2.idStudentClassAYear
+
+
+heroku buildpacks:set https://github.com/some/buildpack.git -a n-school-server
+
+
+ 
+DATABASE_URL  mysql://152871_yanord:yanord@mysql-databaseweb.alwaysdata.net:3306/databaseweb_test3
+
+
+git remote add cesloulou https://github.com/user/repo.git 
+git push cesloulou  master
+
+
+heroku buildpacks:set emk/rust
+
+
+
+
+
+heroku buildpacks:set emk/rust -a n-school-server-cpbpmc 
+git remote add n-school-server-cpbpmc   https://git.heroku.com/n-school-server-cpbpmc.git
+git push n-school-server-cpbpmc   master
+DATABASE_URL  mysql://smallces_dbuser:comptenlg.ge.smallces-1@mysql-smallces.alwaysdata.net:3306/smallces_cpbpmc
+
+
+
+heroku buildpacks:set emk/rust -a n-school-server-ces-ngassa 
+git remote add n-school-server-ces-ngassa   https://git.heroku.com/n-school-server-ces-ngassa.git
+git push n-school-server-ces-ngassa   master
+DATABASE_URL  mysql://cesngassa_userdb:comptenlg.ge.cesngassa-1@mysql-cesngassa.alwaysdata.net:3306/cesngassa_db
+
+
+
+heroku buildpacks:set emk/rust -a n-school-server-ces-mandjaola 
+git remote add n-school-server-ces-mandjaola   https://git.heroku.com/n-school-server-ces-mandjaola.git
+git push n-school-server-ces-mandjaola  master
+DATABASE_URL  mysql://188704_dbuser:comptenlg.ge.cesmandjaora-1@mysql-nlabsgroupgecesmandjaora.alwaysdata.net:3306/nlabsgroupgecesmandjaora_db
+
+heroku buildpacks:set emk/rust -a n-school-server-ces-loulou 
+git remote add n-school-server-ces-loulou   https://git.heroku.com/n-school-server-ces-loulou.git
+git push n-school-server-ces-loulou  master
+DATABASE_URL  mysql://cesloulou_userdb:comptenlg.ge.cesloulou-1@mysql-cesloulou.alwaysdata.net:3306/cesloulou_db
+
+
+_______________________________________________________________________________________________________________________________
+02 Aout 2021
+
+heroku logs --tail --remote n-school-server-ces-ngassa
+
+https://n-school-server-ces-ngassa.herokuapp.com/api/
+
+__________________________________________________________________________________________________________________________________
+06 Aout 2021
+
+        SELECT  t1.idStudent, t1.studentNames, t1.studentFirstNames, 
+                DATE_FORMAT(t1.bithDate, '%Y-%m-%d') as bithDate , 
+                t1.birthPlace, t1.idStudentClassAYear,
+                t1.average ,  t1.classPosition, t1.sexe , t1.present ,
+                t1.matricule , t1.somme , t1.sommeCoef, t1.redouble, 
+                t2.idAbsenceHoursInfo, t2.abscenceHours, t2.justifiedAbscenceHours 
+
+        FROM(  SELECT st.idStudent, st.studentNames, st.studentFirstNames, st.bithDate, st.birthPlace, scy.idStudentClassAYear,
+                        null as average ,  null as classPosition, st.sexe , scy.present ,
+                        st.matricule , null as somme , null as sommeCoef, scy.redouble, 
+                        null as idAbsenceHoursInfo, null as abscenceHours, null as justifiedAbscenceHours 
+                FROM   StudentClassAYear scy,   Student st 
+                WHERE  scy.student = st.idStudent and scy.classAYear = 2 
+             ) t1          
+        LEFT JOIN (
+            SELECT st.idStudent,  scy.idStudentClassAYear,               
+                    ahi.idAbsenceHoursInfo, ahi.abscenceHours, ahi.justifiedAbscenceHours 
+            FROM   StudentClassAYear scy,   Student st , AbsenceHoursInfo ahi    
+            WHERE  scy.student = st.idStudent and scy.classAYear = 2 and
+                    scy.idStudentClassAYear = ahi.studentClassAYear 
+                    and ahi.markCategory = 1
+        ) t2
+        ON  t1.idStudentClassAYear  = t2.idStudentClassAYear
+        Order by t1.studentNames asc 
+
+
+/ student average
+
+SELECT t3.idStudent , t3.studentNames , t3.studentFirstNames , 
+                t3.bithDate, t3.birthPlace, t3.idStudentClassAYear, t3.average,
+                t3.classPosition, t3.sexe, t3.present , t3.matricule,  t4.somme,
+                t4.sommeCoef, t3.redouble , t3.idAbsenceHoursInfo, t3.abscenceHours, 
+                t3.justifiedAbscenceHours, t4.idStudentAverage, t4.studentClassAYear, t4.average
+        FROM (
+            SELECT  t1.idStudent , t1.studentNames , t1.studentFirstNames , 
+                    t1.bithDate, t1.birthPlace, t1.idStudentClassAYear, t1.average,
+                    t1.classPosition, t1.sexe, t1.present , t1.matricule,  t1.somme,
+                    t1.sommeCoef, t1.redouble , t2.idAbsenceHoursInfo, t2.abscenceHours, 
+                            t2.justifiedAbscenceHours
+
+            FROM(  
+                select st.idStudent , st.studentNames , st.studentFirstNames , 
+                        st.bithDate, st.birthPlace, scy.idStudentClassAYear, null as  average,
+                        null as classPosition, st.sexe, scy.present , st.matricule,  null as somme,
+                        null as sommeCoef, scy.redouble
+                from  StudentClassAYear scy , Student st, ClassAYear cy
+                where cy.idClassAYear = 4 and cy.idClassAYear = scy.classAYear
+                            and  st.idStudent = scy.student
+                ) t1          
+            LEFT JOIN (
+                select abi.idAbsenceHoursInfo, abi.abscenceHours, 
+                                abi.justifiedAbscenceHours, abi.studentClassAYear
+                from AbsenceHoursInfo abi
+                where abi.markCategory = 1
+            ) t2
+            ON  t1.idStudentClassAYear  = t2.studentClassAYear 
+        ) t3
+        LEFT JOIN (
+            SELECT sta.idStudentAverage, sta.studentClassAYear, sta.average,
+                   sta.somme, sta.sommeCoef
+            FROM StudentAverage sta 
+            WHERE sta.markCategory = 1
+        ) t4
+    ON  t3.idStudentClassAYear  = t4.studentClassAYear
+    Order by t3.studentNames asc  
+
+
+__________________________________________________________________________________________________________________________________
+09 Aout 2021
+
+ok get teacher, student rc rc term subjectmark
+
+
+
+__________________________________________________________________________________________________________________________________
+10 Aout 2021
+
+la function get student rc term ne doit paas etre utilise temps d utilisation d ordre des 7s de plus le resultat n est visible au niveau de l app  qu apres au moisn 20 sec. 
+
+la function get student rc est de l' ordre des 4s resultst dispo immediatement. 
+
+test  du lancement de plusieurs function get student rc : contrairement a Nodejs  Rocket rust fait dyu multi treading et tput les get student rc sont pour moyennes 3.7s au niveau heroku 
+Lancement de 6 functions get student rc pour simuler le cas ou on a besoins les 6 sequences d un eleves et evaluation du temps de reponse  : 40s pour 6requete mais au niveau heroku chaque requete q en moyenne 4s  4*6 = 24
+
+donc je peux lancer autant de requete que je veux le serveur ne bloquera pas mais au niveau de l application cela va quand meme traine. 
+
+==> test : lancer les 6 requetes mais de maniere assynchrone au niveau de lapp android utilisation des listener et des corroutines et des lisener a ce niveau l utilisation des flow devient capital.
+
+
+__________________________________________________________________________________________________________________________________
+11 Aout 2021               
+	this!!.forEach{
+	    Util.clog(it.studentNames +  it.average + "\n")
+	}
+	Util.clog(listStudentRc.size.toString() + " QWERTY \n")
+
+
+
+__________________________________________________________________________________________________________________________________
+17 Aout 2021 
+
+
+
+                withContext(Dispatchers.Main) {
+                    reportCardPrinterInterfaceSequence.printReportCard(
+                        student_rc,result.success, null, null, null
+                    )
+                }
+
+
+__________________________________________________________________________________________________________________________________
+20 Aout 2021 
+
+        fun test_2(fon : ( (ListOfStudentRcParameters, Boolean) -> Result<MutableList<StudentRc>> )){
+        }
+        var ds :((ListOfStudentRcParameters, Boolean) -> Result<MutableList<StudentRc>> )
+          = studentRcRepository.get_list_of_student_rc_from_api
+        test_2(studentRcRepository.get_list_of_student_rc_from_api)
+ 
+
+send a repository function to the function test_2v
+-------------
+
+            // TODO null check
+            val school_login_id = NSchoolApplication.userNavigation.schoolLogin!!.id
+            val storage = Firebase.storage
+            var storageRef = storage.reference
+            val report_card_entete = NSchoolApplication.theContext.getString(R.string.report_card_entete)
+            val logo_file_name_complete = "$school_login_id/$report_card_entete"
+            var imagesRef: StorageReference? = storageRef.child(logo_file_name_complete)
+            val url =  imagesRef!!.downloadUrl.await().toString()
+
+
+
+
+          <div class ="enteteColumns2" > 
+            <img class = "logo" src="logo.png" />  
+          </div> 
+
+
+___________________________________________________________________________________________________________________________________
+06/01/2022
+
+
+                    val _appreciation = report_card_settings.appreciation_subject_mark
+                                            .get_appreciation(mark_value = if (my == null) {null} else {Mark_value(my)})!!
+                                            
+                    appreciation =  _appreciation.substringBefore(Util.SEPARATEUR)                    
+                    appreciationEnglish = _appreciation.substringAfter(Util.SEPARATEUR)
+                    
+                    
+                    
+                            cpbpmc
+                    
+                    
+
+                           
+   "[-0-5-[>Null|Nil , [-5-8-[>Faible|Weak , [-8-10-[>Mediocre|Poor, [-10-12-[>Passable|Fair , [-12-14.5-[>Assez Bien|Fairly good, [-14.5-16.5-[>Bien|Good,  [-16.5-19-[>Très Bien|Very good, [-19-20-]>"Excellent|Excellent"
+                           
+                           
+                            "[-0-10-[>Non acquis|Not acquired , [-10-16-[>E.C.A|I.B.A , [-16-20-[>Acquis|acquired, [-20-20-]>Excellent|Excellent"            // APC  
+                            
+                            
+                                                      
+                           "[-0-5-[>Travail Nul|Nil work , [-5-8-[>Travail Faible|Weak work, [-8-10-[>Travail mediocre|Poor work, [-10-12-[>Travail Passable|Fair work , [-12-14.5-[>Assez Bon travail|Fairly good work, [-14.5-16.5-[>Bon Travail|Good work,  [-16.5-19-[>Très bon travail|Very good work, [-19-20-]>"Travail Excellent|Excellent work"
+                           
+                           
+                           
+                           Mandjaola 
+                           
+                              "[-0-10-[>Non acquis|Not acquired , [-10-14-[>E.C.A|I.B.A , [-14-18-[>Acquis|acquired, [-18-20-]>Expert|Expert"            // APC  every where 
+                           
+                           
+                           loulou 
+                           
+                              "[-0-2-[>Null|Nil ,[-2-3-[>Presque Nul|Almost Nil , [-3-6.5-[>Très Faible|Very weak" , [-6.5-8-[>Faible|Weak , [-8-9-[>Insuffisant|Insufficient , [-9-10-[>Mediocre|Poor, [-10-12-[>Passable|Fair , [-12-14-[>Assez Bien|Fairly good, [-14-16-[>Bien|Good,  [-16-18-[>Très Bien|Very good, [-18-20-[>"Excellent|Excellent , [-20-20-]>"Parfait|Perfect"
+                           
+                           
+                           
+         "[-0-2-[>Null|Nil work ,[-2-3-[>Travail presque Nul|Almost Nil work , [-3-6.5-[> Travail très Faible|Very weak work" , [-6.5-8-[> Travail Faible|Weak work , [-8-9-[> Travail Insuffisant|Insufficient work , [-9-10-[>Travail Mediocre|Poor work, [-10-12-[> Travail Passable|Fair work , [-12-14-[>Assez bon Travail|Fairly good work, [-14-16-[>Bon travail|Good work,  [-16-18-[>Très bon travail|Very good work, [-18-20-[>"Excellent travail|Excellent work , [-20-20-]>"Travail parfait|Perfect work"
+                           
+                           
+                           ngassa 
+
+
+
+
+
+
+    private fun bluidDecisionCounselInfo(moy:Float?, absNjust : Int):String {
+
+        var th = if (moy == null ) "" else
+                   if (report_card_settings.honor_roll.contains(Mark_value(moy!!)) ) "checked" else ""
+
+        var thE = if (moy == null ) "" else
+                   if (report_card_settings.honor_roll_encouragement.contains(Mark_value(moy!!))) "checked" else ""
+
+        var thF = if (moy == null ) "" else
+                   if (report_card_settings.honor_roll_congratulations.contains(Mark_value(moy!!))) "checked" else ""
+        val bt = if (moy == null ) "" else
+                   if (report_card_settings.serious_work_warning.contains(Mark_value(moy!!)))  "checked" else ""
+        val at = if (moy == null ) "" else
+                    if ((report_card_settings.work_warning.contains(Mark_value(moy!!))) ) "checked" else ""
+
+        val ac = if (report_card_settings.conduct_warning.contains(Mark_value(absNjust.toFloat()))) {
+            th = "";
+            thE = "";
+            thF = "";  "checked"
+        } else ""
+        val bc = if (report_card_settings.serious_conduct_warning.contains(Mark_value(absNjust.toFloat()))){
+            th = "";
+            thE = "";
+            thF = "";  "checked"
+        } else ""
+        
+______________________________________________________________________________________________________________
+2022/01/18
+
+SELECT tea.teacherName , NULL as idLogin,  tpw.teacherId, tpw.password, "" as username, tpw.securityLevel, 1 as active
+FROM  Teacher tea ,  TeacherPassword tpw
+WHERE  tea.idTeacher = tpw.teacherId
+
+
+
+
+DELIMITER $$ 
+CREATE PROCEDURE initialiseLoginTable()  BEGIN
+ 
+ DECLARE v_finished INTEGER  DEFAULT 0;
+
+
+ DECLARE teacherId  INTEGER;
+ DECLARE password varchar(256);
+ DECLARE username varchar(256);
+ DECLARE securityLevel INTEGER;
+ 
+  
+
+ DEClARE teacher_teacher_password_cursor CURSOR FOR 
+ SELECT tpw.teacherId, tpw.password, tea.teacherName  as username, tea.securityLevel
+ FROM  Teacher tea ,  TeacherPassword tpw
+ WHERE  tea.idTeacher = tpw.teacherId;
+  
+ DECLARE CONTINUE HANDLER 
+        FOR NOT FOUND SET v_finished = 1;   
+ 
+  OPEN teacher_teacher_password_cursor;
+   
+   get_teacher_teacher_password_Row: LOOP
+     
+   FETCH teacher_teacher_password_cursor INTO teacherId, password , username, securityLevel ;
+  
+   IF v_finished = 1 THEN 
+    LEAVE get_teacher_teacher_password_Row;
+   END IF;
+ 
+           INSERT INTO Login
+	   SET idLogin = NULL,
+	       teacherId = teacherId,
+	       password = password , 	       
+	       username = username,
+	       securityLevel = securityLevel,
+	       active = 1 ;
+
+
+ 
+ END LOOP get_teacher_teacher_password_Row;
+
+ CLOSE teacher_teacher_password_cursor;
+ 
+END$$ 
+DELIMITER ;
+
+
+
+
+
+______________________________________________________________________________________________________________
+2022/02/08
+
+SELECT * 
+FROM Student st 
+WHERE st.photo_url like '%http%'
+
+
+
+
+______________________________________________________________________________________________________________
+2022/02/11
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+where you want to import a database verify the database name
+
+
+
+
+______________________________________________________________________________________________________________
+2022/02/12 
+
+heroku logs --tail --remote n-school-server-cpbpmc
+
+______________________________________________________________________________________________________________
+2022/02/12  
+
+
+1- What is a correct part of an Implicit Intent for sharing data implementation?       D
+
+	A. val sendIntent = Intent(this, UploadService::class.java).apply { putExtra(Intent.EXTRA_TEXT, textMessage) ...
+	B. val sendIntent = Intent().apply { type = Intent.ACTION_SEND; ...
+	C. val sendIntent = Intent(this, UploadService::class.java).apply { data = Uri.parse(fileUrl) ...
+	D. val sendIntent = Intent().apply { action = Intent.ACTION_SEND ...
+
+
+2- Select correct demonstration of WorkRequest cancellation.      C
+
+	A. workManager.enqueue(OneTimeWorkRequest.Builder(FooWorker::class.java).build())
+	B. val request: WorkRequest = OneTimeWorkRequest.Builder(FooWorker::class.java).build() workManager.enqueue(request) val status = workManager.getWorkInfoByIdLiveData(request.id) status.observe(...)
+	C. val request: WorkRequest = OneTimeWorkRequest.Builder(FooWorker::class.java).build() workManager.enqueue(request) workManager.cancelWorkById(request.id)
+	D. val request1: WorkRequest = OneTimeWorkRequest.Builder(FooWorker::class.java).build() val request2: WorkRequest = OneTimeWorkRequest.Builder(BarWorker::class.java).build() val request3:    WorkRequest = OneTimeWorkRequest.Builder(BazWorker::class.java).build() workManager.beginWith(request1, request2).then(request3).enqueue()
+	E. val request: WorkRequest = OneTimeWorkRequest.Builder(FooWorker::class.java).build() workManager.enqueue(request) workManager.cancelWork(request) 
+	
+	// https://medium.com/tech-takeaways/4-ways-to-cancel-android-workmanager-tasks-63d212c32109
+	
+
+3-  In general, you should send an AccessibilityEvent whenever the content of your custom view changes. For example, if you are implementing a custom slider bar that allows a user to select a numeric value by pressing the left or right arrows, your custom view should emit an event of type TYPE_VIEW_TEXT_CHANGED whenever the slider value changes. Which one of the following sample codes demonstrates the use of the sendAccessibilityEvent() method to report this event.  B
+
+
+	A. override fun dispatchPopulateAccessibilityEvent(event: AccessibilityEvent): Boolean { return super.dispatchPopulateAccessibilityEvent(event).let { completed -> if (text?.isNotEmpty() == true) { event.text.add(text) true } else { completed } } }
+	B. override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean { return when(keyCode) { KeyEvent.KEYCODE_DPAD_LEFT -> { currentValue-- sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED) true } ... } }
+	C. override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean { return when(keyCode) { KeyEvent.KEYCODE_ENTER -> { currentValue-- sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_CONTEXT_CLICKED) true } ... } }
+	--   https://developer.android.com/guide/topics/ui/accessibility/custom-views
+	
+4- The easiest way of adding menu items (to specify the options menu for an activity) is inflating an XML file into the Menu via MenuInflater. With menu_main.xml we can do it in this way:	 A
+
+	A. override fun onCreateOptionsMenu(menu: Menu): Boolean { menuInflater.inflate(R.menu.menu_main, menu) return true }
+	B. override fun onOptionsItemSelected(item: MenuItem): Boolean { menuInflater.inflate(R.menu.menu_main, menu) return super.onOptionsItemSelected(item) }
+	C. override fun onCreate(savedInstanceState: Bundle?) { super.onCreate(savedInstanceState) setContentView(R.menu.menu_main) }
+	
+	
+5- Android Tests. You can use the childSelector() method to nest multiple UiSelector instances. For example, the following code example shows how your test might specify a search to find the first ListView in the currently displayed UI, then search within that ListView to find a UI element with the text property Apps. What is the correct sample? B
+
+	A. val appItem: UiObject = device.findObject( UiSelector().className(ListView.class) .instance(1) .childSelector( UiSelector().text("Apps") ) )
+	B. val appItem: UiObject = device.findObject( UiSelector().className("android.widget.ListView") .instance(0) .childSelector( UiSelector().text("Apps") ) )
+	C. val appItem: UiObject = device.findObject( UiSelector().className("android.widget.ListView") .instance( UiSelector().text("Apps") ) )
+	
+
+6- The following code snippet shows an example of an Espresso test:  B
+
+	A. @Rule fun greeterSaysHello() { onView(withId(R.id.name_field)).do(typeText("Steve")) onView(withId(R.id.greet_button)).do(click()) onView(withText("Hello Steve!")).check(matches(isDisplayed())) }
+	B. @Test fun greeterSaysHello() { onView(withId(R.id.name_field)).perform(typeText("Steve")) onView(withId(R.id.greet_button)).perform(click()) onView(withText("Hello Steve!")).check(matches(isDisplayed())) }
+	C. @Test fun greeterSaysHello() { onView(withId(R.id.name_field)).do(typeText("Steve")) onView(withId(R.id.greet_button)).do(click()) onView(withText("Hello Steve!")).compare(matches(isDisplayed())) }
+
+
+7- As an example. In an Activity we have our TimerViewModel object (extended ViewModel), named mTimerViewModel. mTimerViewModel.timer method returns a LiveData<Long> value. What can be a correct way to set an observer to change UI in case if data was changed?
+
+
+	A. mTimerViewModel!!.timer.value.toString().observe (Observer { aLong -> callAnyChangeUIMethodHere(aLong!!) })
+	B. mTimerViewModel!!.timer.observe (this, Observer { aLong -> callAnyChangeUIMethodHere(aLong!!) })
+	C. mTimerViewModel.observe (Observer { aLong -> callAnyChangeUIMethodHere(aLong!!) })
+	
+
+8- LiveData.postValue() and LiveData.setValue() methods have some differences. So if you have a following code executed in the main thread: liveData.postValue("a"); liveData.setValue("b");What will be the correct statement?
+
+
+	A. The value "b" would be set at first and later the main thread would override it with the value "a".
+	B. The value "a" would be set at first and later the main thread would override it with the value "b".
+	C. The value "b" would be set at first and would not be overridden with the value "a".
+	D. The value "a" would be set at first and would not be overridden with the value "b".
+	
+	
+	https://blog.mindorks.com/livedata-setvalue-vs-postvalue-in-android
+
+9- In our TeaViewModel class, that extends ViewModel, we have such prorerty: val tea: LiveData<Tea>An observer in our Activity (type of mViewModel variable in example is TeaViewModel) is set in this way: mViewModel!!.tea.observe(this, Observer { tea: Tea? -> displayTea(tea) })What will be a correct displayTea method definition?   B
+
+	A. private fun displayTea()
+	B. private fun displayTea(tea: Tea?)
+	C. private fun displayTea(tea: LiveData?<Tea>)
+	D. private fun displayTea(tea: LiveData?<T>)
+
+
+10- For example, we have a file in our raw folder app/src/main/res/raw/sample_teas.json. To get an InputStream for reading it, from out Context context, we can do this:
+
+	A. val input = context!!.openRawResource(R.raw.sample_teas)
+	B. val input = context!!.getRawResource(R.raw.sample_teas)
+	C. val input = context!!.resources.openRawResource(R.raw.sample_teas)
+
+
+
+
+
+
+liens utiles pour la certification
+
+https://developer.android.com/courses?gclid=Cj0KCQiA3rKQBhCNARIsACUEW_b6FL7eYNRlILwzWZ3syOTNMY8G0IqWZVqIIbZ9iVkKoAX-fxJSCpUaArc0EALw_wcB#certification-and-degree-programs
+https://www.freecram.net/question/Google.Associate-Android-Developer.v2021-04-25.q37/android-tests-you-can-use-the-childselector-method-to-nest-multiple-uiselector-instances-for-example
+
+
+
+
+______________________________________________________________________________________________________________
+2022/02/19  
+https://www.baeldung.com/contribution-guidelines
+
+course to take https://developer.android.com/codelabs/advanced-android-kotlin-training-welcome#0
+
+
+
+
+______________________________________________________________________________________________________________
+2022/02/24 
+
+
+1- Fragment in Android can be found through  r: D  
+
+	A- findByID()
+	B- findFragmentByID()
+	C- getContext.findFragmentByID()
+	D- FragmentManager.findFragmentByID 
+	
+
+2- What is off-line synchronization in android?  r B
+
+	A- Synchronization with internet
+	B-Background synchronization
+	C- Synchronization without internet
+	D- None of the above
+
+
+3- What is the life cycle of services in android? A
+
+	A-onCreate()−>onStartCommand()−>onDestory()
+	B- onRecieve()
+	C- final()
+	D- Service life cycle is same as activity life cycle.
+
+
+4- How to initialize an array in Kotlin with values? *B
+
+	A- int numbers[] = new int[] {10, 20, 30, 40, 50}
+	B- val numbers: IntArray = intArrayOf(10, 20, 30, 40, 50)
+	C- val numbers: IntArray = listOf(10, 20, 30, 40, 50)
+	D- int numbers[] = intArrayOf(10, 20, 30, 40, 50)
+
+
+
+5- The callback that is called when activity interaction with user is started is C
+
+	a- onStart
+	B- onStop
+	C- onResume
+	D- onDestroy
+
+
+6- By default, the notification's text content is truncated to fit one line. If you want your notification to be longer, for example, to create a larger text area, you can do it in this way:  C
+	A- var builder = NotificationCompat.Builder(this, CHANNEL_ID) .setContentText("Much longer text that cannot fit one line...") .setStyle(NotificationCompat.BigTextStyle().bigText("Much longer text that  cannot fit one line..."))...
+	B- var builder = NotificationCompat.Builder(this, CHANNEL_ID) .setContentText("Much longer text that cannot fit one line...") .setLongText("Much longer text that cannot fit one line..."))...
+	C- var builder = NotificationCompat.Builder(this, CHANNEL_ID) .setContentText("Much longer text that cannot fit one line...") .setTheme(android.R.style.Theme_LongText);...
+
+
+
+7-SharedPreferences.Editor is an interface used for modifying values in a SharedPreferences object. To mark in the editor that a preference value should be removed, which will be done in the actual preferences once commit() or apply() is called, what method in SharedPreferences.Editor should we use? *D
+	A- delete(String key)
+	B- clear()
+	C- remove(String key)
+	D- removeAll()
+
+
+8- To run a debuggable build variant you must use a build variant that includes * a
+	A- debuggable true in the build configuration
+	B- debuggable true or debuggable false in the build configuration
+	C- minifyEnabled false in the build configuration
+
+
+9- Which one of this variable is nullable *A 
+	A- var myVariable: String? = "This is my nullable variable" myVariable = null
+	B- var myVariable: String = "variable is not nullable"myVariable = null
+	C- var myVariable: String = "This is my nullable variable"
+
+
+You can create an emulator to simulate the configuration of a particular type of Android device using a tool like *C
+	A- Theme Editor
+	B- Android SDK Manager
+	C- AVD Manager
+	D- Virtual Editor
+
+
+
+______________________________________________________________________________________________________________
+2022/03/02 
+
+https://github.com/amed12/google-certification-kotlin-2020
+
+
+
+
+______________________________________________________________________________________________________________
+2022/03/03 
+
+https://github.com/amed12/google-certification-kotlin-2020 
+https://developer.android.com/reference/android/arch/lifecycle/Transformations
+
+
+
+______________________________________________________________________________________________________________
+2022/03/10 
+
+always data ssh connexion
+
+ssh-cpbpmc.alwaysdata.net
+ssh user : cpbpmc_admin
+ssh password : [alpha1Beta2]
+
+ssh my-account@ssh-my-account.alwaysdata.net
+
+
+______________________________________________________________________________________________________________
+2022/03/12 
+
+$ git remote add deploy cpbpmc@ssh-cpbpmc.alwaysdata.net:~/project.git 
+
+$ git remote add deploy sshuserc@ssh-cpbpmc.alwaysdata.net:~/project.git
+
+
+$ cd project
+$ git remote add deploy <account>@ssh-<account>.alwaysdata.net:~/project.git
+$ git checkout production
+$ git push deploy production
+
+
+$ git init --bare ~/project.git
+$ curl -L -o ~/project.git/hooks/post-receive https://raw.githubusercontent.com/alwaysdata/autodeploy-git-hook/master/post-receive
+$ chmod +x project.git/hooks/post-receive
+
+
+nschoolnjs
+www.nschoolnjs.com
+
+nlg
+cpbpmc.alwaysdata.net
+
+
+git remote add deploy cpbpmc@ssh-cpbpmc.alwaysdata.net:~/nlg.git
+
+
+
+
+
+ADDRESS=192.168.43.40 ID_MATRICULE=T  cargo run 
+
+
+ADDRESS=192.168.43.40 ID_MATRICULE=T  DATABASE_URL=mysql://cpbpmc_dbuser:comptenlg.ge.cpbpmc-1@mysql-cpbpmc.alwaysdata.net:3306/cpbpmc_dbname PORT=8000 ./webApp
+
+
+
+"https://n-school-server-cpbpmc.herokuapp.com/api/"
+
+
+/home/cpbpmc/www/nss
+
+______________________________________________________________________________________________________________
+2022/03/13 
+
+
+ID_MATRICULE=T  DATABASE_URL=mysql://cpbpmc_dbuser:comptenlg.ge.cpbpmc-1@mysql-cpbpmc.alwaysdata.net:3306/cpbpmc_dbname PORT=8000 ./webApp
+ ./webApp --port 8300 --host '::'  --proxy-headers --forwarded-allow-ips "::1"
+ 
+ cat sites-2022-03-14.log  | tail -20    
+
+
+______________________________________________________________________________________________________________
+2022/03/15
+ 
+DATABASE_URL=mysql://cpbpmc_dbuser:comptenlg.ge.cpbpmc-1@mysql-cpbpmc.alwaysdata.net:3306/cpbpmc_dbname heroku local
+
+cargo build --release
+
+ok it is ok I succeded to deploy the rust/rocket web app on always data 
+difficulties 
+ - the working directory start from /home/cpbpmc/www/
+ - the user program app has an specified PORT and IP given by the platform it is not 0.0.0.0 like in heroku.
+really it was not easy but now it is ok we need now the deploy the js application. 
+
+
+alwaysData address  :  http://cpbpmc.alwaysdata.net/api/login
+heroku "https://n-school-server-cpbpmc.herokuapp.com/api/"
+
+
+[15/Mar/2022:06:00:42 +0100] [upstream] [853265] STDOUT:     => port: 8101                                                      
+[15/Mar/2022:06:00:42 +0100] [upstream] [853265] STDOUT:     => log: critical                                                   
+[15/Mar/2022:06:00:42 +0100] [upstream] [853265] STDOUT:     => workers: 24                                                     
+
+ALwaysData by default only log critical issue (error) but it seems that we can configurate it .
+service try also it 
+
+
+	$  git remote add origin https://github.com/Njamen/N_School.git  
+        $  git remote add n-school-server https://github.com/Njamen/NSchoolServer.git
+        $  git remote add n-school-server-js   https://github.com/Njamen/NSchoolServer-Js.git
+        $  git remote -v 
+        $  git push n-school-server-js  master
+
+
+git push n-school-server-js  master
+
+
+/home/cesloulou/NSchool/NSchoolServer/  
+
+ /NSchoolServerJs
+
+
+"https://n-school-server-ces-loulou.herokuapp.com/api/"
+http://cesloulou.alwaysdata.net/api/
+
+
+https://github.com/Njamen/NSchoolServer-Js.git
+
+config variable enviroment for WebApp.js 
+DATABASE_HOST=mysql-cesloulou.alwaysdata.net
+DATABASE_NAME=cesloulou_db
+DATABASE_USER=cesloulou_userdb
+DATABASE_USER_PASSWORD=comptenlg.ge.cesloulou-1
+ID_MATRICULE=L
+
+
+PORT=8000 IP=127.0.0.1 node app.js
+
+
+______________________________________________________________________________________________________________
+2022/03/19
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+call fillTeacherSchoolSchoolYearIdInTeacherClassAYearSubjectTable();
+
+SELECT count(*) FROM TeacherClassAYearSubject t WHERE t.teacherSchoolSchoolId is null;
+
+call initialiseMarkCategorySchoolSchoolYearGeneralised()
+
+
+
+ID_MATRICULE=T  
+
+ 	
+
+cesngassa.alwaysdata.net
+/home/cesngassa/NSchool/NSchoolServer/ 
+NSchoolServer[CesNgassa]
+./webApp 
+DATABASE_URL=mysql://cesngassa_userdb:comptenlg.ge.cesngassa-1@mysql-cesngassa.alwaysdata.net:3306/cesngassa_db
+ID_MATRICULE=N
+
+ftp://ftp-cesngassa.alwaysdata.net
+http://cesngassa.alwaysdata.net/api/
+"https://n-school-server-ces-ngassa.herokuapp.com/api/"
+____________________
+
+nlabsgroupgecesmandjaora.alwaysdata.net
+NSchoolServer[CesMandjaola] 
+
+/home/nlabsgroupgecesmandjaora/NSchool/NSchoolServer/
+
+./webApp
+DATABASE_URL=mysql://188704_dbuser:comptenlg.ge.cesmandjaora-1@mysql-nlabsgroupgecesmandjaora.alwaysdata.net:3306/nlabsgroupgecesmandjaora_db
+ID_MATRICULE=M
+ftp-nlabsgroupgecesmandjaora.alwaysdata.net
+nlabsgroupgecesmandjaora
+nlabsgroupgecesmandjaora
+
+http://nlabsgroupgecesmandjaora.alwaysdata.net/api/
+
+"https://n-school-server-ces-mandjaola.herokuapp.com/api/"
+
+/home/nicanord/Desktop/www/webApp
+
+/home/cesmandjaola/NSchool/NSchoolServer/
+
+
+
+APP_MIN_VERSION=1.1.2
+ID_APPLICATION=
+ 
+ 
+______________________________________________________________________________________________________________
+2022/04/27
+ 
+ 
+         SELECT t1.idStudent, t1.studentNames, t1.studentFirstNames, t1.bithDate, t1.matricule
+               t1.birthPlace, t1.idStudentClassAYear,t1.sexe, t1.redouble, t1.present,                 
+               t2.markCategory, t2.marksCategoryName, t2.idAbsenceHoursInfo, 
+               t2.abscenceHours, t2.justifiedAbscenceHours  
+
+        FROM
+        (
+            SELECT st.idStudent, st.studentNames, st.studentFirstNames, st.bithDate, 
+                    st.birthPlace, 
+                                st.sexe, scy.present, st.matricule, scy.idStudentClassAYear,
+                    scy.redouble
+            FROM  Student st, ClassAYear cy, StudentClassAYear scy
+            WHERE cy.idClassAYear = :id_class_a_year and scy.classAYear = cy.idClassAYear
+                and scy.student = st.idStudent
+        ) t1
+        LEFT JOIN 
+        (   
+            SELECT st.idStudent, st.studentNames, st.studentFirstNames, st.bithDate, st.matricule,
+              st.birthPlace,  scy.idStudentClassAYear, st.sexe, scy.redouble, scy.present,
+              mkc.idMarksCategory, mkc.marksCategoryName, ahi.idAbsenceHoursInfo, 
+              ahi.abscenceHours, ahi.justifiedAbscenceHours
+      
+            FROM   AbsenceHoursInfo ahi, StudentClassAYear scy,   Student st , MarksCategory  mkc 
+            WHERE  ahi.studentClassAYear = scy.idStudentClassAYear and 
+                   scy.student = st.idStudent and scy.classAYear = :id_class_a_year  and 
+                   ahi.markCategory = :id_marks_category and mkc.idMarksCategory = ahi.markCategory    
+   
+        ) t2
+        ON t1.idStudentClassAYear = t2.idStudentClassAYear         
+
+
+_______________________________________________________________________________________________________________________
+2022/05/01  
+
+
+nlabsgroupgecesmandjaora.alwaysdata.net
+NSchoolServer[Cesonline] 
+
+/home/databaseweb/NSchool/NSchoolServer/
+
+./webApp
+DATABASE_URL=mysql://152871_yanord:yanord@mysql-databaseweb.alwaysdata.net:3306/databaseweb_test3
+
+
+ID_MATRICULE=A
+ftp-databaseweb.alwaysdata.net
+databaseweb_yanord  :: utilisateur
+alpha1Beta2 :: password
+
+http://nlabsgroupgecesmandjaora.alwaysdata.net/api/
+
+"https://n-school-server-ces-mandjaola.herokuapp.com/api/"
+
+///home/nicanord/Desktop/www/webApp
+
+/home/databaseweb/NSchool/NSchoolServer/
+
+
+
+APP_MIN_VERSION=1.1.2
+ID_APPLICATION=    
+
+
+http://databaseweb.alwaysdata.net/php/
+
+http://databaseweb.alwaysdata.net/api
+https://n-school-server.herokuapp.com/api/
+        
+        
+_______________________________________________________________________________________________________________________________________
+2022/05/07  
+
+cd admin/logs/sites/2022/sites-2022-05-07.log
+
+ cat sites-2022-05-07.log  | tail -20   
+ 
+ 
+DATABASE_URL=mysql://cesngassa_userdb:comptenlg.ge.cesngassa-1@mysql-cesngassa.alwaysdata.net:3306/cesngassa_db ID_MATRICULE=N ADDRESS=192.168.43.40  cargo run
+
+
+DATABASE_URL=mysql://cesngassa_userdb:comptenlg.ge.cesngassa-1@mysql-cesngassa.alwaysdata.net:3306/cesngassa_db ID_MATRICULE=N ADDRESS=192.168.43.40  cargo run
+
+
+
+
+_______________________________________________________________________________________________________________________________________
+2022/05/07  
+
+
+SELECT * 
+FROM Student st 
+WHERE st.studentNames like '%NDRADA ASSANA%'
+
+
+SELECT * 
+FROM Student st , StudentClassAYear scy
+WHERE st.idStudent = scy.student
+
+SELECT * 
+FROM Student st , StudentClassAYear scy
+WHERE st.idStudent = scy.student and scy.student == 532
+
+
+SELECT scy.classAYear
+FROM Student st , StudentClassAYear scy, ClassAYear cy
+WHERE st.idStudent = scy.student and 
+      scy.student == 532 and scy.classAYear = cy.idClassAYear
+      
+      
+      SELECT  *
+FROM StudentAverage sta
+WHERE sta.studentClassAYear = 1533
+
+
+SELECT * FROM Student st WHERE st.photo_url LIKE ''
+
+
+UPDATE Student st
+SET column1 = value1, column2 = value2, ...
+WHERE condition; 
+
+
+
+
+_______________________________________________________________________________________________________________________________________
+2022/06/14
+
+==> delete a branch 
+	$ git branch -D developpement
+	$ git branch -d developpement  // secure delete 
+
+
+git push  remote_name remote_branch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

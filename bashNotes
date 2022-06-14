@@ -1,0 +1,11 @@
+
+==>  How to create a bash command 
+ 1- create a file without extension if you want
+ 2- Add this code line a the file at the first line :  #!/bin/bash (this line indiquaces with bash is use)
+ 3- Add the bash script after. save the file.
+ 4- add the location of the folder that script file in the PATH using the command below 
+      export PATH=$PATH:~/Laboratoire2020/bashCommands
+    You can add this line of code in the .bashrc file present in the HOME directory.
+
+==> Usually used commands 
+     mv oldFileName newFileName  :  rename a file or a directory
